@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101a20">
+  <meta name="description" content="冬日复古车站 · 一件可以旋转把玩的数字雪景球收藏品。离线实时 3D。">
+  <title>Winter Station — A Little World, Held in Winter</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='33' r='29' fill='%2314232b' stroke='%23c5ac7b' stroke-width='2'/%3E%3Cpath d='M16 64h48v10H16z' fill='%23ac8b54'/%3E%3Cpath d='M40 12v42M22 22l36 23M22 45l36-23' stroke='%23eef3f1' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="experience" aria-label="可交互的冬日车站雪景球">
+    <canvas id="world" aria-label="3D 雪景球，拖动旋转，滚轮缩放" tabindex="0"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar ui">
+      <a class="brand" href="#" aria-label="Winter Station 收藏馆首页"><span class="brand-mark">✳</span><span>THE LITTLE WORLD<span class="brand-sub">DIGITAL CURIOSITIES</span></span></a>
+      <div class="collection">THE WINTER COLLECTION <span>—</span> <b>№ 001</b></div>
+      <button class="icon-button" id="hide-ui" title="隐藏界面 · H" aria-label="隐藏全部界面"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+    </header>
+    <section class="story ui" aria-label="藏品介绍">
+      <div class="eyebrow"><span></span> A MOMENT, KEPT FOREVER</div>
+      <h1>Winter<br><em>Station.</em></h1>
+      <p class="chinese-title">冬 日 · 候 车 室</p>
+      <div class="story-line"></div>
+      <p class="description">末班列车还未驶离，<br>雪已悄悄落满了站台。<br>把这个冬天，轻轻握在手里。</p>
+      <div class="edition"><span>HANDCRAFTED IN LIGHT</span><span>EDITION 01 / WINTER 1924</span></div>
+      <button id="shake" class="shake-button"><span class="snow-icon">✣</span><span>轻摇雪景球<small>SHAKE THE GLOBE</small></span><span class="button-arrow">↗</span></button>
+      <div id="shake-state" class="shake-state" aria-live="polite">轻轻一摇，让时间慢下来。</div>
+    </section>
+    <aside class="views ui" aria-label="六组电影镜头">
+      <div class="rail-label">CURATED VIEWS</div>
+      <button data-view="0" aria-pressed="true" title="收藏全景"><span>01</span><i></i><b>收藏全景</b></button>
+      <button data-view="1" aria-pressed="false" title="雪夜站房"><span>02</span><i></i><b>雪夜站房</b></button>
+      <button data-view="2" aria-pressed="false" title="蒸汽来信"><span>03</span><i></i><b>蒸汽来信</b></button>
+      <button data-view="3" aria-pressed="false" title="松林侧影"><span>04</span><i></i><b>松林侧影</b></button>
+      <button data-view="4" aria-pressed="false" title="屋顶落雪"><span>05</span><i></i><b>屋顶落雪</b></button>
+      <button data-view="5" aria-pressed="false" title="时光背面"><span>06</span><i></i><b>时光背面</b></button>
+    </aside>
+    <footer class="bottom ui">
+      <div class="interaction-hint"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v7"/></svg><span>拖动旋转 <i>·</i> 滚轮靠近</span></div>
+      <div class="toolbar" role="toolbar" aria-label="场景控制">
+        <button id="orbit" aria-pressed="true" title="自动环绕 · 约50秒一圈 · A"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5"/><path d="m18 5 3 6-6-1"/></svg><span>环绕</span></button>
+        <span class="divider"></span>
+        <button id="daynight" aria-pressed="true" title="白天与夜晚 · N"><svg viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.1a8.5 8.5 0 1 0 10 10.4Z"/></svg><span>雪夜</span></button>
+        <span class="divider"></span>
+        <button id="whistle" title="火车鸣笛 · W"><svg viewBox="0 0 24 24"><path d="m4 10 7-4v12l-7-4H2v-4h2ZM15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></svg><span>鸣笛</span></button>
+        <button id="music" aria-pressed="false" title="原创圣诞小圆舞曲 · M"><svg viewBox="0 0 24 24"><path d="M9 17V5l12-2v12M9 8l12-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="18" cy="16" rx="3" ry="2"/></svg><span>音乐</span></button>
+        <button id="ambient" aria-pressed="false" title="冬风与车站环境音 · E"><svg viewBox="0 0 24 24"><path d="M3 8h11c5 0 5-6 1-6M2 12h16c5 0 5 6 1 6M5 16h5c4 0 4 6 0 6"/></svg><span>环境</span></button>
+        <span class="divider"></span>
+        <button id="reset" title="重置视角 · R"><svg viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg><span>重置</span></button>
+      </div>
+      <div class="specimen"><span class="status-dot"></span> REAL-TIME 3D <span class="slash">/</span> <span id="quality">HIGH FIDELITY</span></div>
+    </footer>
+    <div class="view-caption ui"><span id="view-number">01 / 06</span><span id="view-title">The winter keeps its little secrets.</span></div>
+    <div id="toast" role="status"></div>
+    <div id="loading"><div class="loading-symbol">✳</div><div class="loading-name">Winter Station</div><div class="loading-caption">正在点亮这个小小的冬天</div><div class="loading-line"><i></i></div></div>
+    <div id="error" hidden><h2>无法启动 3D 场景</h2><p></p><button onclick="location.reload()">重新加载</button></div>
+  </main>
+  <script src="app.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,1102 @@
+[
+  {
+    "test": "Standalone final build and three audio channels",
+    "data": {
+      "ready": true,
+      "revision": "1.2.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 789,
+      "trianglesAllPasses": 13503644,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 0,
+      "camera": [
+        11.275047030377557,
+        11.028109107465983,
+        22.196464553528198
+      ],
+      "cameraClearance": 25.83,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": false,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 2423,
+        "settled": 177,
+        "maxRadius": 5.079673312468603,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 11.787900000000374,
+        "windGust": 0.06827737463563738,
+        "walkerPosition": [
+          -0.6543314285714713,
+          1.5499362475451406,
+          3.5629357208503634
+        ],
+        "walkingLegAngle": 0.2962206897830758,
+        "conductorArm": 2.016015292262779,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0.0046325729284552985
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0.0046325729284552985
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 53.333333,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Music off, ambience continues; animated people and wind",
+    "data": {
+      "ready": true,
+      "revision": "1.2.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 786,
+      "trianglesAllPasses": 13502948,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 0,
+      "camera": [
+        11.275047030377557,
+        11.028109107465983,
+        22.196464553528198
+      ],
+      "cameraClearance": 25.83,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 2360,
+        "settled": 240,
+        "maxRadius": 5.112931763088405,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 22.08730000000075,
+        "windGust": 0.6349288245531743,
+        "walkerPosition": [
+          -1.011451428571343,
+          1.5482958651029244,
+          3.4821650165308253
+        ],
+        "walkingLegAngle": -0.24935262000547165,
+        "conductorArm": 2.0066129783933953,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0.0000029569354619216928
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0.0000029569354619216928
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 53.333333,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final station camera",
+    "data": {
+      "ready": true,
+      "revision": "1.2.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 788,
+      "trianglesAllPasses": 13503596,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 1,
+      "camera": [
+        -2.71738527837308,
+        9.151569151108522,
+        18.268546275485498
+      ],
+      "cameraClearance": 19.13,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 2254,
+        "settled": 346,
+        "maxRadius": 5.11456007887268,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 33.304,
+        "windGust": 0.2775560242010194,
+        "walkerPosition": [
+          -0.8276000000000002,
+          1.5480427338253981,
+          3.5282893378909415
+        ],
+        "walkingLegAngle": 0.24212029779043168,
+        "conductorArm": 2.4599930129764336,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 9.801791897590404e-10
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 9.801791897590404e-10
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 53.333333,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final locomotive, coal exhaust, depth-clipped light beams",
+    "data": {
+      "ready": true,
+      "revision": "1.2.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 780,
+      "trianglesAllPasses": 13502936,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 2,
+      "camera": [
+        16.839487373608222,
+        7.373428067579884,
+        10.033737434495292
+      ],
+      "cameraClearance": 19.87,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 2164,
+        "settled": 436,
+        "maxRadius": 5.114032304668047,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 43.55810000000152,
+        "windGust": 0.23082075346830966,
+        "walkerPosition": [
+          -0.8433599999998267,
+          1.541967600359831,
+          3.524717616100356
+        ],
+        "walkingLegAngle": -0.06854505591708863,
+        "conductorArm": 2.4306971557886508,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 6.462158219978608e-13
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 6.462158219978608e-13
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 53.333333,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final side camera and window light pools",
+    "data": {
+      "ready": true,
+      "revision": "1.2.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 785,
+      "trianglesAllPasses": 13502696,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 3,
+      "camera": [
+        -19.793475290527724,
+        11.359836552130131,
+        11.886231309633624
+      ],
+      "cameraClearance": 24.19,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 1960,
+        "settled": 640,
+        "maxRadius": 5.115381439253489,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 63.520500000001896,
+        "windGust": 0.050528384514887004,
+        "walkerPosition": [
+          -0.8476571428569262,
+          1.5534867440583353,
+          3.5237314462598426
+        ],
+        "walkingLegAngle": -0.39766344730292436,
+        "conductorArm": 2.4573890530986158,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 4.147960496786826e-19
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 4.147960496786826e-19
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 53.333333,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final rooftop camera",
+    "data": {
+      "ready": true,
+      "revision": "1.2.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 780,
+      "trianglesAllPasses": 13503578,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 4,
+      "camera": [
+        4.446156727320809,
+        23.060717340799876,
+        13.718473359897102
+      ],
+      "cameraClearance": 23.78,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 1457,
+        "settled": 1143,
+        "maxRadius": 5.11427467549235,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 120.02680000000261,
+        "windGust": 0.47441157159332326,
+        "walkerPosition": [
+          -1.2469371428568448,
+          1.5533207041870867,
+          3.4084096964563932
+        ],
+        "walkingLegAngle": -0.39291945098153414,
+        "conductorArm": 2.0002318185370953,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 1.227427469112278e-36
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 1.227427469112278e-36
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 53.333333,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Revision 1.3: faster automatic orbit and new C-major waltz",
+    "data": {
+      "ready": true,
+      "revision": "1.3.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 785,
+      "trianglesAllPasses": 13502696,
+      "modelTriangles": 1892989,
+      "fps": 121,
+      "view": 0,
+      "camera": [
+        2.938631988306647,
+        5.992520404336641,
+        19.36513835212754
+      ],
+      "cameraClearance": 19.67,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": false,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 404,
+        "settled": 2196,
+        "maxRadius": 5.113275726630311,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 44.842500000000335,
+        "windGust": 0.11806093642589205,
+        "walkerPosition": [
+          -0.6965714285713902,
+          1.5431915298616157,
+          3.555264222756978
+        ],
+        "walkingLegAngle": -0.10351447025379279,
+        "conductorArm": 2.0375771458980974,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final rear camera",
+    "data": {
+      "ready": true,
+      "revision": "1.3.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 797,
+      "trianglesAllPasses": 13504756,
+      "modelTriangles": 1892989,
+      "fps": 125,
+      "view": 5,
+      "camera": [
+        -5.157293109009192,
+        11.092168330703485,
+        18.252356846054766
+      ],
+      "cameraClearance": 20.2,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 406,
+        "settled": 2194,
+        "maxRadius": 5.113973783119317,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 77.6215000000001,
+        "windGust": 0.22069447259435965,
+        "walkerPosition": [
+          -1.25,
+          1.539568523402733,
+          3.4073379430606234
+        ],
+        "walkingLegAngle": 0,
+        "conductorArm": 2.0774797911564766,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final daylight and reset",
+    "data": {
+      "ready": true,
+      "revision": "1.3.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 791,
+      "trianglesAllPasses": 13502708,
+      "modelTriangles": 1892989,
+      "fps": 140,
+      "view": 0,
+      "camera": [
+        -3.649068440640952,
+        9.616864592697912,
+        24.950041195022425
+      ],
+      "cameraClearance": 25.8,
+      "transition": false,
+      "night": 0,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 396,
+        "settled": 2204,
+        "maxRadius": 5.112156798450211,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 143.84050000000022,
+        "windGust": 0.40550538009955994,
+        "walkerPosition": [
+          -0.8110857142856893,
+          1.5535684580919455,
+          3.531956116218294
+        ],
+        "walkingLegAngle": 0.3999981339774999,
+        "conductorArm": 2.458581764984738,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "Final large snowflakes, active shake, no escaped particles",
+    "data": {
+      "ready": true,
+      "revision": "1.3.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 792,
+      "trianglesAllPasses": 13502960,
+      "modelTriangles": 1892989,
+      "fps": 129,
+      "view": 0,
+      "camera": [
+        -3.649068440640952,
+        9.616864592697912,
+        24.950041195022425
+      ],
+      "cameraClearance": 25.8,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 1238,
+        "settled": 1362,
+        "maxRadius": 5.117453592123248,
+        "allowedRadius": 5.12,
+        "energy": 0.020509117937433777,
+        "shakeCount": 1
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 202.76990000000515,
+        "windGust": 0.2528814776857793,
+        "walkerPosition": [
+          -0.9334399999994112,
+          1.5475953154130953,
+          3.502934583964215
+        ],
+        "walkingLegAngle": -0.22933691458177696,
+        "conductorArm": 2.022149093476568,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "v1.3 standalone embedded music ambience whistle",
+    "result": {
+      "ready": true,
+      "revision": "1.3.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 793,
+      "trianglesAllPasses": 13503902,
+      "modelTriangles": 1892989,
+      "fps": 1,
+      "view": 0,
+      "camera": [
+        -18.020084792952254,
+        11.028109107465967,
+        17.178075220119027
+      ],
+      "cameraClearance": 25.83,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": true,
+      "uiHidden": false,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 848,
+        "settled": 1752,
+        "maxRadius": 5.112011941219381,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 131.57160000000894,
+        "windGust": 0.05002611238367777,
+        "walkerPosition": [
+          -0.6296114285724506,
+          1.5464585581937937,
+          3.567195923078227
+        ],
+        "walkingLegAngle": -0.19685813688745274,
+        "conductorArm": 2.4154977828505535,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 2.451649007933798e-40
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 2.451649007933798e-40
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "lighting": {
+          "projectedLights": 9,
+          "volumetricBeams": 9,
+          "shadowMaps": 3,
+          "depthClipped": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  }
+]

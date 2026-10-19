@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "revision": "1.3.0",
+  "physics": {
+    "simulatedSeconds": 180,
+    "shakes": 6,
+    "particles": 2600,
+    "sampledParticlePositions": 1872000,
+    "escapedParticles": 0,
+    "invalidCoordinates": 0,
+    "maxRadius": 5.120004312128964,
+    "glassRadius": 5.24,
+    "allowedRadius": 5.12,
+    "settledAtEnd": 2129,
+    "movingAtEnd": 471
+  },
+  "camera": {
+    "routes": 36,
+    "samples": 8676,
+    "minimumCameraRadius": 19.134776187454992,
+    "glassRadius": 5.24,
+    "maximumStepAt240Samples": 0.5173211004328216
+  },
+  "offline": {
+    "remoteScriptImports": 0,
+    "remoteCssImports": 0,
+    "allLocalAudioPresent": true,
+    "standaloneEmbeddedAudioTracks": 3,
+    "standaloneHasNoExternalJSOrCSS": true
+  },
+  "executionSeconds": 3.8973309
+}
