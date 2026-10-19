@@ -84,5 +84,5 @@ export function makeTrain(root,M){
   for(let x of [-.6,0,.6]){cyl(car,.055,.065,.07,M.black,x,1.85,0);snowLump(car,x,1.9,0,.075,.03,.07,M.snow);}
   // Flexible coupling between cars follows the intervening arc.
   const c1=onTrack(.225);box(root,.1,.1,.12,M.iron,c1.x,GROUND+.59,c1.z).rotation.y=.2;
-  root.updateMatrixWorld(true);return {steamOrigin:p.localToWorld(V(.78,1.91,0)),pressureOrigin:p.localToWorld(V(.02,1.67,.24)),head,headPos:p.localToWorld(V(1.23,1.41,0))};
+  root.updateMatrixWorld(true);return {steamOrigin:p.localToWorld(V(.78,1.91,0)),pressureOrigin:p.localToWorld(V(.02,1.67,.24)),head,headPos:p.localToWorld(V(1.23,1.41,0)),santaSeat:car.localToWorld(V(-.16,1.81,.02)),coachAngle:ca};
 }
