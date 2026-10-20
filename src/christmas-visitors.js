@@ -1,6 +1,37 @@
 import * as THREE from 'three';
 import {V,TAU,mesh,box,cyl,ball,torus,beam,pipe,group,batch} from './craft.js';
 
+function makeGiftSleigh(parent,M){
+  const sleigh=group(parent,-1.66,-.035,0);sleigh.name='Flying gift sleigh · lacquered wood, brass runners and seven parcels';
+  const lacquer=new THREE.MeshStandardMaterial({color:0x99282c,roughness:.32,metalness:.18}),lining=new THREE.MeshStandardMaterial({color:0x542d2c,roughness:.93});
+  const green=new THREE.MeshStandardMaterial({color:0x2d6453,roughness:.65}),blue=new THREE.MeshStandardMaterial({color:0x4e718b,roughness:.71});
+  const panel=new THREE.Shape();panel.moveTo(-.60,-.10);panel.bezierCurveTo(-.75,.06,-.76,.42,-.62,.48);panel.quadraticCurveTo(-.47,.51,-.39,.36);panel.quadraticCurveTo(-.15,.17,.29,.22);panel.quadraticCurveTo(.55,.31,.62,.10);panel.quadraticCurveTo(.63,-.01,.46,-.10);panel.closePath();
+  box(sleigh,1.06,.08,.64,M.oak,-.04,-.055,0,.025);box(sleigh,1,.055,.54,lining,-.07,.005,0,.025);
+  for(let side of [-1,1]){
+    mesh(sleigh,new THREE.ExtrudeGeometry(panel,{depth:.045,bevelEnabled:true,bevelSegments:3,bevelThickness:.012,bevelSize:.012,curveSegments:24}),lacquer,0,0,side*.31-.022);
+    pipe(sleigh,[[-.64,.45,side*.343],[-.54,.48,side*.343],[-.38,.34,side*.343],[-.11,.23,side*.343],[.27,.25,side*.343],[.48,.25,side*.343],[.59,.11,side*.343]],.017,M.gold);
+    pipe(sleigh,[[-.62,-.10,side*.347],[-.31,-.12,side*.347],[.28,-.12,side*.347],[.50,-.075,side*.347]],.012,M.brass);
+    // One continuous runner curls upward into an actual scroll at its leading tip.
+    pipe(sleigh,[[-.81,-.33,side*.37],[-.60,-.39,side*.37],[.39,-.39,side*.37],[.66,-.34,side*.37],[.79,-.18,side*.37],[.77,-.055,side*.37],[.66,-.025,side*.37],[.61,-.10,side*.37]],.024,M.brass);
+    pipe(sleigh,[[-.80,-.35,side*.37],[-.55,-.413,side*.37],[.40,-.413,side*.37],[.65,-.36,side*.37]],.008,M.gold);
+    for(let x of [-.4,.36]){beam(sleigh,[x,-.08,side*.27],[x+.045,-.37,side*.37],.016,M.gold);beam(sleigh,[x-.12,-.13,side*.29],[x+.1,-.34,side*.36],.011,M.aged);}
+    // Gilded botanical scrolls on both outward-facing side panels.
+    pipe(sleigh,[[-.29,.04,side*.35],[-.17,.16,side*.35],[-.02,.14,side*.35],[.035,.065,side*.35],[.12,.035,side*.35],[.23,.11,side*.35]],.009,M.gold);
+    for(let i=0;i<3;i++){const leaf=ball(sleigh,1,M.gold,-.17+i*.105,.11-i*.018,side*.351,.037,.014,.006);leaf.rotation.z=(i%2?.5:-.5);}
+    ball(sleigh,.03,M.gold,-.64,.49,side*.34);ball(sleigh,.025,M.gold,.48,.26,side*.34);
+  }
+  // Padded, rolled rear backrest; gifts rise naturally above the curved carriage sides.
+  box(sleigh,.08,.42,.58,lacquer,-.60,.21,0,.055);box(sleigh,.055,.27,.50,lining,-.548,.24,0,.045);
+  function parcel(x,y,z,w,h,d,material,turn=0){const p=group(sleigh,x,y,z,turn);box(p,w,h,d,material,0,h/2,0,.019);box(p,w*.14,h*1.012,d*1.015,M.gold,0,h/2,0,.004);box(p,w*1.015,h*1.012,d*.13,M.gold,0,h/2,0,.004);box(p,w*1.035,.025,d*1.035,material,0,h,0,.007);for(let s of [-1,1]){const b=torus(p,w*.14,w*.022,M.gold,s*w*.10,h+.023,0);b.rotation.x=Math.PI/2;b.rotation.y=s*.35;b.scale.y=.62;}return p;}
+  parcel(-.34,.025,-.08,.36,.39,.34,green,-.09);parcel(.19,.025,.055,.34,.31,.39,lacquer,.10);parcel(-.34,.445,-.08,.26,.22,.25,M.cream,.15);parcel(.20,.36,.055,.25,.24,.28,blue,-.12);
+  parcel(-.02,.035,-.22,.20,.48,.18,M.red,.15);parcel(-.21,.03,.20,.22,.23,.20,blue,.11);parcel(.39,.05,-.19,.16,.18,.16,green,-.1);
+  const sackMat=new THREE.MeshStandardMaterial({color:0xa58b58,roughness:.98});const sack=group(sleigh,-.40,.21,.16);ball(sack,1,sackMat,0,.24,0,.17,.29,.18);cyl(sack,.048,.09,.11,sackMat,0,.51,0,14);torus(sack,.055,.012,M.gold,0,.53,0).rotation.x=Math.PI/2;pipe(sack,[[.03,.53,.03],[.13,.49,.04],[.11,.35,.09]],.009,M.gold);
+  batch(sleigh);
+  // Paired leather traces lead all the way from the animal's harness to the sleigh.
+  const traces=group(parent);for(let side of [-1,1]){const path=[[-.18,.12,side*.235],[-.53,-.015,side*.28],[-.81,-.015,side*.33],[-1.08,.09,side*.32]];pipe(traces,path,.010,M.leather);pipe(traces,path.map(([x,y,z])=>[x,y+.009,z]),.0035,M.gold);torus(traces,.027,.006,M.brass,-.18,.12,side*.235).rotation.y=Math.PI/2;}
+  batch(traces);return sleigh;
+}
+
 // Modelled in local space so every limb, antler and harness follows the flight.
 function makeReindeer(parent,M){
   const g=group(parent);g.name='Flying reindeer · articulated winter messenger';
@@ -13,7 +44,7 @@ function makeReindeer(parent,M){
   ball(body,1,darkFur,.27,.08,0,.24,.28,.205);const neck=ball(body,1,fur,.42,.28,0,.17,.37,.155);neck.rotation.z=-.40;
   for(let i=0;i<11;i++){const f=i/10;ball(body,.075,cream,.31+f*.19,.12+f*.4,.08+Math.sin(f*9)*.012,1,.75,.9);}
   const head=group(g,.56,.59,0);ball(head,1,fur,0,.01,0,.225,.155,.135);ball(head,1,cream,.172,-.055,0,.17,.091,.104);
-  ball(head,.068,M.black,.292,-.035,0,.75,.8,1.0);ball(head,.043,red,.329,-.025,.003,.78,.8,1.02);
+  ball(head,.068,M.black,.292,-.035,0,.75,.8,1.0);const noseMaterial=new THREE.MeshStandardMaterial({color:0xbc3431,roughness:.42,emissive:0xff512e,emissiveIntensity:.06});ball(head,.043,noseMaterial,.329,-.025,.003,.78,.8,1.02);
   for(let side of [-1,1]){
     const ear=ball(head,1,fur,-.078,.13,side*.16,.09,.045,.18);ear.rotation.x=side*.45;
     const earInner=ball(head,1,darkFur,-.062,.145,side*.20,.056,.025,.115);earInner.rotation.x=side*.45;
@@ -43,7 +74,7 @@ function makeReindeer(parent,M){
   const scarf=torus(g,.155,.034,red,.46,.43,0);scarf.rotation.z=-.4;scarf.rotation.x=Math.PI/2;
   const scarfTail=group(g,.38,.43,-.12);pipe(scarfTail,[[0,0,0],[-.3,.02,-.01],[-.56,-.04,-.06],[-.75,.02,-.06]],.045,red);
   for(let j=0;j<5;j++)beam(scarfTail,[-.73,.02+j*.008,-.06],[-.81,-.02+j*.008,-.06],.006,M.gold);
-  batch(body);batch(head);batch(tail);batch(scarfTail);return {g,head,legs,tail,scarfTail};
+  const sleigh=makeGiftSleigh(g,M);batch(body);batch(head);batch(tail);batch(scarfTail);g.userData.interaction='reindeer';return {g,head,legs,tail,scarfTail,sleigh,noseMaterial};
 }
 
 function bentHat(parent,red,white){
@@ -80,11 +111,13 @@ export function reindeerPose(t){
 }
 
 export function makeChristmasVisitors(root,M,train){
-  const deer=makeReindeer(root,M),santa=makeSanta(root,M,train.santaSeat,train.coachAngle);deer.g.scale.setScalar(.91);
-  function update(t){const pose=reindeerPose(t);deer.g.position.copy(pose.position);deer.g.rotation.set(Math.sin(t*.72)*.025,pose.yaw,pose.bank);
-    for(const leg of deer.legs)leg.g.rotation.z=leg.front*(.45+Math.sin(t*3.7+leg.side*.75)*.35);deer.head.rotation.z=Math.sin(t*1.1)*.045;deer.tail.rotation.y=Math.sin(t*4)*.2;deer.scarfTail.rotation.y=Math.sin(t*3.3)*.11;
-    santa.arms[1].rotation.z=2.32+Math.sin(t*2.1)*.27;santa.arms[1].rotation.x=-.25;santa.arms[0].rotation.x=-.72;santa.arms[0].rotation.z=-.24;santa.head.rotation.y=Math.sin(t*.6)*.13;santa.g.rotation.z=Math.sin(t*.8)*.012;
+  const deer=makeReindeer(root,M),santa=makeSanta(root,M,train.santaSeat,train.coachAngle);deer.g.scale.setScalar(.91);santa.g.userData.interaction='santa';let santaUntil=-1,deerUntil=-1,lookYaw=0;
+  function interact(kind,elapsed,camera){if(kind==='santa'){santaUntil=elapsed+5;if(camera)lookYaw=THREE.MathUtils.clamp(Math.atan2(camera.x-santa.g.position.x,camera.z-santa.g.position.z)-train.coachAngle,-.65,.65);}if(kind==='reindeer')deerUntil=elapsed+3.2;}
+  function update(t,{elapsed=t,thankful=false}={}){const pose=reindeerPose(t);deer.g.position.copy(pose.position);deer.g.rotation.set(Math.sin(t*.72)*.025,pose.yaw,pose.bank);santa.g.position.copy(train.santaSeat);santa.g.rotation.y=train.coachAngle;
+    for(const leg of deer.legs)leg.g.rotation.z=leg.front*(.45+Math.sin(t*3.7+leg.side*.75)*.35);deer.head.rotation.z=Math.sin(t*1.1)*.045;deer.tail.rotation.y=Math.sin(t*4)*.2;deer.scarfTail.rotation.y=Math.sin(t*3.3)*.11;deer.sleigh.rotation.x=Math.sin(t*.91)*.026;deer.sleigh.rotation.z=Math.sin(t*.86+.5)*.014;
+    const greeting=elapsed<santaUntil||thankful;santa.arms[1].rotation.z=(greeting?2.35:1.5)+Math.sin(elapsed*(greeting?4.5:1.3))*(greeting?.37:.12);santa.arms[1].rotation.x=-.25;santa.arms[0].rotation.x=-.72;santa.arms[0].rotation.z=-.24;santa.head.rotation.y=elapsed<santaUntil?lookYaw:Math.sin(t*.6)*.13;santa.g.rotation.z=Math.sin(t*.8)*.012;
+    if(elapsed<deerUntil){deer.head.rotation.z+=Math.sin(elapsed*6)*.17;deer.head.rotation.y=Math.sin(elapsed*4)*.20;}else deer.head.rotation.y=0;deer.noseMaterial.emissiveIntensity=elapsed<deerUntil?.25+Math.max(0,Math.sin(elapsed*6))*.9:.06;
   }
-  function diagnostics(){const bounds=new THREE.Box3().setFromObject(deer.g),corners=[];for(let x of [bounds.min.x,bounds.max.x])for(let y of [bounds.min.y,bounds.max.y])for(let z of [bounds.min.z,bounds.max.z])corners.push(Math.hypot(x,y-4.15,z));return {flyingReindeer:1,santaOnTrain:true,reindeerPosition:deer.g.position.toArray(),boundingBoxMaxRadius:Math.max(...corners),santaWavingArm:santa.arms[1].rotation.z};}
-  update(0);return {update,diagnostics,deer,santa};
+  function diagnostics(){return {flyingReindeer:1,giftSleigh:true,giftParcels:7,tethered:true,santaOnTrain:true,reindeerPosition:deer.g.position.toArray(),sleighPosition:deer.sleigh.getWorldPosition(V()).toArray(),santaWavingArm:santa.arms[1].rotation.z};}
+  update(0);return {update,diagnostics,interact,deer,santa};
 }

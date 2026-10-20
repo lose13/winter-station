@@ -26,9 +26,13 @@ export function createMaterials(){
   const wood=noiseMap('wood'),brick=noiseMap('brick'),plaster=noiseMap('plaster'),snow=noiseMap('snow');
   const litGlass=texture(128,256,(c,w,h)=>{const g=c.createRadialGradient(w*.46,h*.66,5,w*.48,h*.56,h*.72);g.addColorStop(0,'#f0ddad');g.addColorStop(.4,'#c3ab7e');g.addColorStop(.78,'#7b6a49');g.addColorStop(1,'#423c2d');c.fillStyle=g;c.fillRect(0,0,w,h);for(let i=0;i<1500;i++){c.fillStyle=rand()>.6?'#f5e4c015':'#383c3410';c.fillRect(rand(0,w),rand(0,h),1,rand(1,3));}});
   const windowMat=new THREE.MeshStandardMaterial({color:0xffffff,map:litGlass,emissive:0xffcda0,emissiveMap:litGlass,emissiveIntensity:.36,roughness:.23,metalness:.04});windowMat.userData.noCastShadow=true;
-  const lampGlass=new THREE.MeshPhysicalMaterial({color:0xe5d3aa,map:litGlass,roughness:.18,transmission:.37,thickness:.015,ior:1.46,emissive:0xffc48a,emissiveMap:litGlass,emissiveIntensity:.17});lampGlass.userData.noCastShadow=true;
+  const lampGlass=new THREE.MeshPhysicalMaterial({color:0xe5d3aa,map:litGlass,roughness:.18,transmission:.37,thickness:.015,ior:1.46,emissive:0xffc48a,emissiveIntensity:.17});lampGlass.userData.noCastShadow=true;
+  // Share the same physical-glass texture sample for color and emission. A second
+  // sampler would exceed WebGL's 16-unit limit with the two interior shadow lights.
+  lampGlass.onBeforeCompile=s=>{s.fragmentShader=s.fragmentShader.replace('#include <emissivemap_fragment>','#ifdef USE_MAP\n totalEmissiveRadiance *= texture2D(map, vMapUv).rgb;\n#endif');};lampGlass.customProgramCacheKey=()=> 'station-lantern-shared-map';
   const filament=new THREE.MeshStandardMaterial({color:0xffecd0,emissive:0xffc18b,emissiveIntensity:5,roughness:.3});filament.userData.noCastShadow=true;
-  const windowGlass=new THREE.MeshStandardMaterial({color:0xffe5c4,roughness:.19,metalness:.08,transparent:true,opacity:.16,emissive:0xffba70,emissiveIntensity:.05,depthWrite:false,side:THREE.DoubleSide});windowGlass.userData.noCastShadow=true;
+  const frost=texture(128,256,(c,w,h)=>{const edge=c.createLinearGradient(0,0,w,0);edge.addColorStop(0,'rgba(231,241,238,.7)');edge.addColorStop(.15,'rgba(245,246,230,.08)');edge.addColorStop(.5,'rgba(255,246,220,.025)');edge.addColorStop(.85,'rgba(245,246,230,.08)');edge.addColorStop(1,'rgba(231,241,238,.7)');c.fillStyle=edge;c.fillRect(0,0,w,h);for(let side of [-1,1])for(let i=0;i<16;i++){const x=side<0?4:124,y=12+i*15;c.strokeStyle='rgba(226,242,240,.3)';c.lineWidth=.8;c.beginPath();c.moveTo(x,y+10);c.lineTo(x-side*(4+i%4),y-9);for(let j=0;j<4;j++){c.moveTo(x-side*(1+j),y+6-j*4);c.lineTo(x-side*(8+j*1.2),y+4-j*5);}c.stroke();}});
+  const windowGlass=new THREE.MeshStandardMaterial({color:0xffe5c4,map:frost,roughness:.24,metalness:.08,transparent:true,opacity:.36,emissive:0xffba70,emissiveIntensity:.05,depthWrite:false,side:THREE.DoubleSide});windowGlass.userData.noCastShadow=true;
   const mat=(color,roughness=.6,metalness=0,opts={})=>new THREE.MeshStandardMaterial({color,roughness,metalness,...opts});
   return {
     walnut:mat(0xb9a9a1,.38,0,{map:wood,bumpMap:wood,bumpScale:.035}),

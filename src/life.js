@@ -14,7 +14,7 @@ export function createTreeWind(M){
   const materials={...M};for(const name of ['pine','pineLight','trunk','snow']){const m=M[name].clone();m.onBeforeCompile=modify;m.customProgramCacheKey=()=> 'winter-tree-wind-v1';m.userData.treeWind=true;materials[name]=m;}
   const depth=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking});depth.onBeforeCompile=modify;depth.customProgramCacheKey=()=> 'winter-tree-wind-depth-v1';
   function connect(root){root.traverse(o=>{if(o.isMesh&&o.material.userData.treeWind)o.customDepthMaterial=depth;});}
-  function update(t,energy=0){uniforms.uWindTime.value=t;uniforms.uWindGust.value=.35+.3*Math.sin(t*.37)+energy;}
+  function update(t,energy=0,gust=null){uniforms.uWindTime.value=t;uniforms.uWindGust.value=(gust??(.35+.3*Math.sin(t*.37)))+energy;}
   return {materials,connect,update,uniforms};
 }
 
@@ -55,7 +55,7 @@ export function makeChristmas(root,M,treeM){
   return {update,material:mat,bulbs,count:points.length/3};
 }
 
-function makeFigure(parent,M,options){
+export function makeFigure(parent,M,options){
   const {x,z,scale=1,rotation=0,coatColor=0x355667,scarfColor=0xab4034,hat='beanie',seated=false}=options;
   const g=group(parent,x,terrainHeight(x,z)+(seated?.43:0),z,rotation);g.scale.setScalar(scale);g.name=options.name||'Miniature winter traveller';
   const coat=new THREE.MeshStandardMaterial({color:coatColor,roughness:.88}),scarfMat=new THREE.MeshStandardMaterial({color:scarfColor,roughness:.98}),skin=new THREE.MeshStandardMaterial({color:0xd8b195,roughness:.93}),hair=new THREE.MeshStandardMaterial({color:0x3a2d27,roughness:.9});
@@ -68,7 +68,7 @@ function makeFigure(parent,M,options){
   for(let s of [-1,1]){ball(body,.008,M.black,s*.03,bodyY+.481,.075,1,.8,.55);ball(body,.016,skin,s*.075,bodyY+.46,.002,.7,1,.65);}ball(body,.015,skin,0,bodyY+.458,.083,.65,.8,1.25);
   if(hat==='cap'){cyl(body,.105,.099,.06,coat,0,bodyY+.56,0,28);box(body,.15,.018,.1,M.black,0,bodyY+.535,.069,.03);ball(body,.013,M.gold,0,bodyY+.56,.101);}
   else {mesh(body,new THREE.SphereGeometry(.104,20,14,0,TAU,0,Math.PI*.57),scarfMat,0,bodyY+.525,0);torus(body,.088,.018,scarfMat,0,bodyY+.525,0).rotation.x=Math.PI/2;ball(body,.032,scarfMat,0,bodyY+.635,0);}
-  torus(body,.066,.031,scarfMat,0,bodyY+.366,0).rotation.x=Math.PI/2;const scarf=box(body,.058,.24,.025,scarfMat,.053,bodyY+.235,.127,.016);scarf.rotation.z=-.18;
+  torus(body,.066,.031,scarfMat,0,bodyY+.366,0).rotation.x=Math.PI/2;const scarf=box(body,.058,.24,.025,scarfMat,.053,bodyY+.235,.127,.016);scarf.rotation.z=-.18;scarf.userData.dynamic=true;
   const arms=[];for(let s of [-1,1]){const arm=group(g,s*.116,bodyY+.29,0);ball(arm,.056,coat,0,-.015,0,1,.9,.9);beam(arm,[0,0,0],[s*.025,-.21,.015],.044,coat,.035,12);ball(arm,.039,scarfMat,s*.025,-.23,.018,.82,1,.82);arms.push(arm);batch(arm);}
   const legs=[];for(let s of [-1,1]){const leg=group(g,s*.064,seated?.02:.32,0);beam(leg,[0,0,0],[0,-.245,seated?.16:0],.041,M.darkwood,.035,12);ball(leg,.047,M.black,0,-.27,seated?.19:.026,.9,.68,1.65);legs.push(leg);batch(leg);}
   batch(body);return {g,body,arms,legs,scarf,baseY:g.position.y,options};
@@ -78,20 +78,24 @@ export function makePeople(root,M){
   const people=group(root);people.name='Six travellers · articulated miniature figures';
   const conductor=makeFigure(people,M,{x:.65,z:3.53,rotation:.3,coatColor:0x213e48,scarfColor:0xbaa57b,hat:'cap',name:'Stationmaster · waving the departure flag'});
   // A real cloth flag is attached to the stationmaster's moving arm.
-  const flag=group(conductor.arms[1],.032,-.25,.02);beam(flag,[0,0,0],[0,-.25,0],.009,M.oak);box(flag,.16,.11,.008,M.signalGreen,.075,-.16,0,.004);
+  const flag=group(conductor.arms[1],.032,-.25,.02);beam(flag,[0,0,0],[0,-.25,0],.009,M.oak);
+  const flagWind={uFlagTime:{value:0},uFlagGust:{value:0}},flagMat=new THREE.MeshStandardMaterial({color:0x83ad72,roughness:.91,side:THREE.DoubleSide});
+  const bend=s=>{Object.assign(s.uniforms,flagWind);s.vertexShader='uniform float uFlagTime;uniform float uFlagGust;\n'+s.vertexShader;s.vertexShader=s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ntransformed.z+=sin(position.x*35.-uFlagTime*4.3)*.018*uv.x*(.2+uFlagGust);');};flagMat.onBeforeCompile=bend;flagMat.customProgramCacheKey=()=> 'station-flag-wind';
+  const cloth=mesh(flag,new THREE.PlaneGeometry(.16,.11,12,6),flagMat,.075,-.16,0),flagDepth=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking,side:THREE.DoubleSide});flagDepth.onBeforeCompile=bend;cloth.customDepthMaterial=flagDepth;
   const walker=makeFigure(people,M,{x:-.85,z:3.5,rotation:0,coatColor:0x8a4c3d,scarfColor:0xcab789,name:'Walking passenger · a suitcase and a wool scarf'});
   const bag=group(walker.arms[0],-.025,-.28,.02);box(bag,.18,.14,.085,M.leather,0,-.045,0,.021);torus(bag,.035,.009,M.darkwood,0,.038,0).scale.y=.6;for(let x of [-.055,.055])box(bag,.018,.14,.09,M.brass,x,-.045,0,.003);
   const parent=makeFigure(people,M,{x:3.55,z:1.45,rotation:-.4,coatColor:0x54695c,scarfColor:0xb89a61,name:'Mother · watching the snow'});
-  const child=makeFigure(people,M,{x:3.22,z:2.0,scale:.73,rotation:.25,coatColor:0xa53432,scarfColor:0xe4d7b2,name:'Child · catching falling snow'});
+  const child=makeFigure(people,M,{x:3.10,z:2.38,scale:.73,rotation:.25,coatColor:0xa53432,scarfColor:0xe4d7b2,name:'Child · catching falling snow'});
   const reader=makeFigure(people,M,{x:-2.64,z:-.17,rotation:.28,coatColor:0x565465,scarfColor:0x8a3f39,seated:true,name:'Seated traveller · reading beside the luggage'});
   const book=group(reader.g,0,.28,.18,.05);box(book,.19,.014,.14,M.cream,0,0,0,.005);box(book,.195,.012,.145,M.engine,0,-.01,0,.006);reader.arms[0].rotation.x=-.65;reader.arms[1].rotation.x=-.65;
   const porter=makeFigure(people,M,{x:-.33,z:-2.62,rotation:2.1,coatColor:0x70654c,scarfColor:0x284849,hat:'cap',name:'Porter · waiting by the parcel trolley'});
   const all=[conductor,walker,parent,child,reader,porter];
-  function update(t){
-    conductor.arms[1].rotation.z=2.23+Math.sin(t*2.5)*.23;conductor.arms[1].rotation.x=.15;conductor.g.rotation.y=.3+Math.sin(t*.37)*.04;
+  function update(t,gust=.2){
+    flagWind.uFlagTime.value=t;flagWind.uFlagGust.value=gust;for(let i=0;i<all.length;i++){all[i].scarf.rotation.z=-.18+Math.sin(t*3+i)*.11*gust;all[i].scarf.rotation.x=Math.sin(t*2.2+i)*.10*gust;}
+    conductor.arms[1].rotation.z=.14+Math.sin(t*.8)*.035;conductor.arms[1].rotation.x=.15;conductor.g.rotation.y=.3+Math.sin(t*.37)*.04;
     // The passenger walks a short, safe path in front of the platform and turns at each end.
     const cycle=t%20,moving=cycle<7||(cycle>10&&cycle<17),f=cycle<7?cycle/7:cycle<10?1:cycle<17?1-(cycle-10)/7:0;
-    walker.g.position.x=-1.25+f*.8;walker.g.position.z=Math.sqrt(3.78*3.78-walker.g.position.x*walker.g.position.x)-.16;walker.g.rotation.y=cycle<8.5?Math.PI/2:-Math.PI/2;const step=moving?Math.sin(t*7)*.4:0;
+    walker.g.position.x=-1.25+f*.8;walker.g.position.z=Math.sqrt(3.96*3.96-walker.g.position.x*walker.g.position.x)-.16;walker.g.rotation.y=cycle<8.5?Math.PI/2:-Math.PI/2;const step=moving?Math.sin(t*7)*.4:0;
     walker.legs[0].rotation.x=step;walker.legs[1].rotation.x=-step;walker.arms[0].rotation.x=-step*.48;walker.arms[1].rotation.x=step*.48;walker.g.position.y=walker.baseY+(moving?Math.abs(Math.sin(t*7))*.014:0);
     parent.g.rotation.y=-.4+Math.sin(t*.45)*.10;parent.arms[0].rotation.x=-.14+Math.sin(t*.8)*.035;
     child.arms[0].rotation.z=-.7-Math.sin(t*1.9)*.24;child.arms[1].rotation.z=.7+Math.sin(t*1.9+.6)*.25;child.g.position.y=child.baseY+Math.max(0,Math.sin(t*1.9))*.035;

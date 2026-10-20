@@ -1,0 +1,1591 @@
+{
+  "revision": "1.7.0",
+  "tested": "2026-10-20",
+  "page": "standalone HTML over localhost HTTP",
+  "finalLoadSince": "2026-10-19T16:50:01.393Z",
+  "consoleErrors": [],
+  "checks": [
+    {
+      "check": "final-landing-burst",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 1547,
+        "trianglesAllPasses": 8542347,
+        "modelTriangles": 1930288,
+        "fps": 75,
+        "view": 2,
+        "camera": [
+          16.839487373608222,
+          7.373428067579884,
+          10.033737434495292
+        ],
+        "cameraClearance": 19.87,
+        "transition": false,
+        "navigation": {
+          "mode": "exterior",
+          "room": null,
+          "roomIndex": -1,
+          "near": 0.1,
+          "fov": 28,
+          "look": null,
+          "lensTarget": null,
+          "fade": 0,
+          "exteriorControlsEnabled": true
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 705,
+          "settled": 1895,
+          "maxRadius": 5.116188384680084,
+          "allowedRadius": 5.12,
+          "energy": 0,
+          "shakeCount": 0
+        },
+        "story": {
+          "seconds": 40.537300000004535,
+          "running": true,
+          "phase": "领取礼物",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "landed",
+            "position": [
+              3.62,
+              1.5612946988182834,
+              1.95
+            ],
+            "visible": true,
+            "parked": 0
+          },
+          "room": {
+            "residents": 2,
+            "activity": "tea and a quiet stroll",
+            "greetedWindow": -1,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "walking",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 5.061677892901938,
+          "alive": 206,
+          "trail": 128,
+          "parcel": 21,
+          "landing": 57,
+          "landingBursts": 1,
+          "seekResets": 1,
+          "clock": 11.243900000005926,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 11.243900000005926,
+          "windGust": 0.12,
+          "walkerPosition": [
+            -0.5921600000006773,
+            1.5419023479023994,
+            3.7554752629022183
+          ],
+          "walkingLegAngle": -0.06668069999046942,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 0.04800603381820073
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 0.04800603381820073
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -1.83095856866131,
+              7.010896030461539,
+              -0.2816343558512139
+            ],
+            "sleighPosition": [
+              -2.138435052787253,
+              6.995803352123544,
+              1.1976077491708597
+            ],
+            "santaWavingArm": 1.6064447620816864
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "final-exterior-trail",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 1537,
+        "trianglesAllPasses": 8535959,
+        "modelTriangles": 1930288,
+        "fps": 77,
+        "view": 0,
+        "camera": [
+          11.275047030377557,
+          11.028109107465983,
+          22.196464553528198
+        ],
+        "cameraClearance": 25.83,
+        "transition": false,
+        "navigation": {
+          "mode": "exterior",
+          "room": null,
+          "roomIndex": -1,
+          "near": 0.1,
+          "fov": 35,
+          "look": null,
+          "lensTarget": null,
+          "fade": 0,
+          "exteriorControlsEnabled": true
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 396,
+          "settled": 2204,
+          "maxRadius": 5.116542783854908,
+          "allowedRadius": 5.12,
+          "energy": 0,
+          "shakeCount": 0
+        },
+        "story": {
+          "seconds": 73.037800000005,
+          "running": true,
+          "phase": "候车",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "parked",
+            "position": [
+              2.719999845092406,
+              1.560807531266613,
+              2.9999984555509243
+            ],
+            "visible": false,
+            "parked": 1
+          },
+          "room": {
+            "residents": 2,
+            "activity": "tea and a quiet stroll",
+            "greetedWindow": -1,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "sleeping",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 3.856588431409677,
+          "alive": 146,
+          "trail": 146,
+          "parcel": 0,
+          "landing": 0,
+          "landingBursts": 1,
+          "seekResets": 1,
+          "clock": 43.74440000000609,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 43.74440000000609,
+          "windGust": 1,
+          "walkerPosition": [
+            -0.8220685714278757,
+            1.553506079657346,
+            3.713732471902329
+          ],
+          "walkingLegAngle": -0.39821589298894644,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 3.9747016447192e-12
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 3.9747016447192e-12
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              0.22835440357357423,
+              7.03053848955354,
+              -1.5878960056251064
+            ],
+            "sleighPosition": [
+              -1.2715020373322339,
+              6.942070643860779,
+              -1.7476798579126391
+            ],
+            "santaWavingArm": 1.537640012128275
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "shake-with-particles",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 2535,
+        "trianglesAllPasses": 30849103,
+        "modelTriangles": 1930288,
+        "fps": 50,
+        "view": 0,
+        "camera": [
+          11.275047030377557,
+          11.028109107465983,
+          22.196464553528198
+        ],
+        "cameraClearance": 25.83,
+        "transition": false,
+        "navigation": {
+          "mode": "exterior",
+          "room": null,
+          "roomIndex": -1,
+          "near": 0.1,
+          "fov": 35,
+          "look": null,
+          "lensTarget": null,
+          "fade": 0,
+          "exteriorControlsEnabled": true
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 2600,
+          "settled": 0,
+          "maxRadius": 5.119699108207963,
+          "allowedRadius": 5.12,
+          "energy": 0.7292469467030213,
+          "shakeCount": 1
+        },
+        "story": {
+          "seconds": 96.85720000000349,
+          "running": true,
+          "phase": "回到站台",
+          "train": {
+            "offsetRadians": 0.02946915058746452,
+            "distance": 0.09489066489163576,
+            "wheelAngle": -0.3012402060051929
+          },
+          "gift": {
+            "stage": "parked",
+            "position": [
+              2.719999845092406,
+              1.560807531266613,
+              2.9999984555509243
+            ],
+            "visible": false,
+            "parked": 1
+          },
+          "room": {
+            "residents": 2,
+            "activity": "tea and a quiet stroll",
+            "greetedWindow": -1,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "grooming",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 4.06441923600764,
+          "alive": 143,
+          "trail": 143,
+          "parcel": 0,
+          "landing": 0,
+          "landingBursts": 1,
+          "seekResets": 1,
+          "clock": 67.56380000000487,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 67.56380000000487,
+          "windGust": 0.6079507230121066,
+          "walkerPosition": [
+            -0.44999999999999996,
+            1.539568523402733,
+            3.7743487389909904
+          ],
+          "walkingLegAngle": 0,
+          "conductorArm": 2.479724669409182,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 0.000002875905844060233
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 0.000002875905844060233
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -0.79804442900804,
+              7.15998721747388,
+              -1.4452445161210115
+            ],
+            "sleighPosition": [
+              -2.1894307565302746,
+              7.086187722049295,
+              -0.8728563616376726
+            ],
+            "santaWavingArm": 1.484247083300357
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "winter-day",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 2544,
+        "trianglesAllPasses": 30873121,
+        "modelTriangles": 1930288,
+        "fps": 83,
+        "view": 0,
+        "camera": [
+          11.275047030377557,
+          11.028109107465983,
+          22.196464553528198
+        ],
+        "cameraClearance": 25.83,
+        "transition": false,
+        "navigation": {
+          "mode": "exterior",
+          "room": null,
+          "roomIndex": -1,
+          "near": 0.1,
+          "fov": 35,
+          "look": null,
+          "lensTarget": null,
+          "fade": 0,
+          "exteriorControlsEnabled": true
+        },
+        "night": 0,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 422,
+          "settled": 2178,
+          "maxRadius": 5.115817377605664,
+          "allowedRadius": 5.12,
+          "energy": 6.478535024727758e-9,
+          "shakeCount": 1
+        },
+        "story": {
+          "seconds": 161.7438000000056,
+          "running": true,
+          "phase": "列车缓行",
+          "train": {
+            "offsetRadians": 0.105,
+            "distance": 0.3381,
+            "wheelAngle": -1.0733333333333335
+          },
+          "gift": {
+            "stage": "parked",
+            "position": [
+              2.470000179241922,
+              1.5608046907832267,
+              3.0299998959780012
+            ],
+            "visible": false,
+            "parked": 2
+          },
+          "room": {
+            "residents": 2,
+            "activity": "tea and a quiet stroll",
+            "greetedWindow": -1,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "walking",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 4.064051721441649,
+          "alive": 143,
+          "trail": 143,
+          "parcel": 0,
+          "landing": 0,
+          "landingBursts": 2,
+          "seekResets": 1,
+          "clock": 132.45040000000674,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 132.45040000000674,
+          "windGust": 0.12000000388712101,
+          "walkerPosition": [
+            -0.7300457142864843,
+            1.5447999644138968,
+            3.7321245168997272
+          ],
+          "walkingLegAngle": -0.14946974317610753,
+          "conductorArm": 2.4797094835784184,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 0.00046409161856309617
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 0.00046409161856309617
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              1.0171872069191752,
+              7.126915161791484,
+              1.3395429971437562
+            ],
+            "sleighPosition": [
+              2.3326688819502506,
+              7.065656825038791,
+              0.5988121679380799
+            ],
+            "santaWavingArm": 1.5679625530600447
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "waiting-room",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 816,
+        "trianglesAllPasses": 7929295,
+        "modelTriangles": 1930288,
+        "fps": 62,
+        "view": 0,
+        "camera": [
+          -2.12,
+          3.1900000000000004,
+          -0.050000000000000044
+        ],
+        "cameraClearance": 2.33,
+        "transition": false,
+        "navigation": {
+          "mode": "interior",
+          "room": "waiting-room",
+          "roomIndex": 0,
+          "near": 0.025,
+          "fov": 70,
+          "look": [
+            0,
+            0
+          ],
+          "lensTarget": 70,
+          "fade": 0,
+          "exteriorControlsEnabled": false
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 387,
+          "settled": 2213,
+          "maxRadius": 5.117817521346895,
+          "allowedRadius": 5.12,
+          "energy": 2.275681348407417e-10,
+          "shakeCount": 1
+        },
+        "story": {
+          "seconds": 173.46460000000258,
+          "running": true,
+          "phase": "等待圣诞邮差",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "parked",
+            "position": [
+              2.470000179241922,
+              1.5608046907832267,
+              3.0299998959780012
+            ],
+            "visible": false,
+            "parked": 2
+          },
+          "room": {
+            "residents": 2,
+            "activity": "tea and a quiet stroll",
+            "greetedWindow": -1,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "grooming",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 4.043245926151951,
+          "alive": 146,
+          "trail": 146,
+          "parcel": 0,
+          "landing": 0,
+          "landingBursts": 2,
+          "seekResets": 1,
+          "clock": 144.17120000000372,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 144.17120000000372,
+          "windGust": 0.12000000013654087,
+          "walkerPosition": [
+            -0.7732914285710031,
+            1.5490823171371053,
+            3.7237636857175818
+          ],
+          "walkingLegAngle": -0.2718226781249234,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 1.0732238681920521e-7
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 1.0732238681920521e-7
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -1.4653063398541253,
+              6.920669444690939,
+              -0.9854916385930181
+            ],
+            "sleighPosition": [
+              -2.481230070387804,
+              6.8865461243045445,
+              0.13239089335939602
+            ],
+            "santaWavingArm": 1.3945636136694752
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "window-tea",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 2077,
+        "trianglesAllPasses": 30504665,
+        "modelTriangles": 1930288,
+        "fps": 63,
+        "view": 0,
+        "camera": [
+          -0.5599999999999999,
+          3.12,
+          -1.05
+        ],
+        "cameraClearance": 1.57,
+        "transition": false,
+        "navigation": {
+          "mode": "interior",
+          "room": "window-tea",
+          "roomIndex": 1,
+          "near": 0.025,
+          "fov": 66,
+          "look": [
+            0,
+            0
+          ],
+          "lensTarget": 66,
+          "fade": 0,
+          "exteriorControlsEnabled": false
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 405,
+          "settled": 2195,
+          "maxRadius": 5.116409856541965,
+          "allowedRadius": 5.12,
+          "energy": 1.4701931505380246e-10,
+          "shakeCount": 1
+        },
+        "story": {
+          "seconds": 174.993700000004,
+          "running": true,
+          "phase": "等待圣诞邮差",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "parked",
+            "position": [
+              2.470000179241922,
+              1.5608046907832267,
+              3.0299998959780012
+            ],
+            "visible": false,
+            "parked": 2
+          },
+          "room": {
+            "residents": 2,
+            "activity": "approaching window",
+            "greetedWindow": 0,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "grooming",
+            "robinFlying": true
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 3.99286297727497,
+          "alive": 148,
+          "trail": 148,
+          "parcel": 0,
+          "landing": 0,
+          "landingBursts": 2,
+          "seekResets": 1,
+          "clock": 145.70030000000514,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 145.70030000000514,
+          "windGust": 0.12000000008821159,
+          "walkerPosition": [
+            -0.598537142856555,
+            1.5521424305410783,
+            3.7545054973292746
+          ],
+          "walkingLegAngle": 0.3592544896670061,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 3.600374568335861e-8
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 3.600374568335861e-8
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -0.956681406929977,
+              6.997564498831472,
+              -1.372133528718571
+            ],
+            "sleighPosition": [
+              -2.2974842685751233,
+              6.93231834151347,
+              -0.6786514397938304
+            ],
+            "santaWavingArm": 1.5950951267500553
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "final-fireside",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 663,
+        "trianglesAllPasses": 7753365,
+        "modelTriangles": 1930288,
+        "fps": 71,
+        "view": 0,
+        "camera": [
+          -0.36999999999999994,
+          2.99,
+          -0.42
+        ],
+        "cameraClearance": 1.29,
+        "transition": false,
+        "navigation": {
+          "mode": "interior",
+          "room": "fireside-reading",
+          "roomIndex": 2,
+          "near": 0.025,
+          "fov": 64,
+          "look": [
+            0,
+            0
+          ],
+          "lensTarget": 64,
+          "fade": 0,
+          "exteriorControlsEnabled": false
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 421,
+          "settled": 2179,
+          "maxRadius": 5.11424243729037,
+          "allowedRadius": 5.12,
+          "energy": 9.485096119895552e-11,
+          "shakeCount": 1
+        },
+        "story": {
+          "seconds": 176.52760000000245,
+          "running": true,
+          "phase": "礼物降落",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "falling",
+            "position": [
+              -1.8054917504613832,
+              7.207242690963479,
+              -1.0481891616141177
+            ],
+            "visible": true,
+            "parked": 2
+          },
+          "room": {
+            "residents": 2,
+            "activity": "approaching window",
+            "greetedWindow": 0,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "grooming",
+            "robinFlying": true
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 4.0394553459381495,
+          "alive": 171,
+          "trail": 152,
+          "parcel": 19,
+          "landing": 0,
+          "landingBursts": 2,
+          "seekResets": 1,
+          "clock": 147.2342000000036,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 147.2342000000036,
+          "windGust": 0.12000000005691057,
+          "walkerPosition": [
+            -0.44999999999999996,
+            1.539568523402733,
+            3.7743487389909904
+          ],
+          "walkingLegAngle": 0,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 1.2036938410009126e-8
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 1.2036938410009126e-8
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -0.31854194041602185,
+              7.138144841181877,
+              -1.5763616381122587
+            ],
+            "sleighPosition": [
+              -1.8096032858337887,
+              7.042415010567698,
+              -1.3516425996852934
+            ],
+            "santaWavingArm": 1.5276717212097812
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "portrait-390x844",
+      "diagnostics": {
+        "ready": true,
+        "revision": "1.7.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          390,
+          844
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 665,
+        "trianglesAllPasses": 7763599,
+        "modelTriangles": 1930288,
+        "fps": 72,
+        "view": 0,
+        "camera": [
+          -0.41999999999999993,
+          3.2199999999999998,
+          -0.07999999999999996
+        ],
+        "cameraClearance": 1.02,
+        "transition": false,
+        "navigation": {
+          "mode": "interior",
+          "room": "fireside-reading",
+          "roomIndex": 2,
+          "near": 0.025,
+          "fov": 76,
+          "look": [
+            0,
+            0
+          ],
+          "lensTarget": 76,
+          "fade": 0,
+          "exteriorControlsEnabled": false
+        },
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 411,
+          "settled": 2189,
+          "maxRadius": 5.115504879922186,
+          "allowedRadius": 5.12,
+          "energy": 4.548409618630119e-13,
+          "shakeCount": 1
+        },
+        "story": {
+          "seconds": 195.21800000000124,
+          "running": true,
+          "phase": "向圣诞老人致谢",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "received",
+            "position": [
+              3.277311340575246,
+              1.7565044094759412,
+              2.143944668825796
+            ],
+            "visible": true,
+            "parked": 2
+          },
+          "room": {
+            "residents": 2,
+            "activity": "tea and a quiet stroll",
+            "greetedWindow": 0,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "sleeping",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 0,
+          "lastInteraction": "none"
+        },
+        "particles": {
+          "indoorMotes": 144,
+          "fireEmbers": 22,
+          "poolCapacity": 420,
+          "outside": 0,
+          "invalid": 0,
+          "maximumRadius": 3.828207965487877,
+          "alive": 144,
+          "trail": 144,
+          "parcel": 0,
+          "landing": 0,
+          "landingBursts": 3,
+          "seekResets": 1,
+          "clock": 165.92460000000239,
+          "depthTest": true,
+          "textureSamplers": 0
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 165.92460000000239,
+          "windGust": 0.1200000000002729,
+          "walkerPosition": [
+            -0.5729028571425845,
+            1.5506821482704218,
+            3.758339229351877
+          ],
+          "walkingLegAngle": -0.31753213907682437,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 1.9167285898118896e-14
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 1.9167285898118896e-14
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -1.7140410381684397,
+              6.9236510604749615,
+              0.6213011947072313
+            ],
+            "sleighPosition": [
+              -1.0494870297650183,
+              6.94962873115332,
+              1.9779956750678875
+            ],
+            "santaWavingArm": 2.0312196256557926
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true,
+            "interiorShadowMaps": 2
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "ambient": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "embedded original MP3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "embedded original MP3"
+          },
+          "effects": {
+            "state": "not enabled",
+            "counts": {
+              "bell": 0,
+              "bird": 0,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    }
+  ],
+  "finalPage": "http://127.0.0.1:5176/Winter-Station-离线单文件.html?room=fireside-reading",
+  "finalRoom": "炉边阅读"
+}

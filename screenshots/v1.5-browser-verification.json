@@ -1,0 +1,1584 @@
+{
+  "revision": "1.5.0",
+  "date": "2026-10-19",
+  "checks": [
+    {
+      "test": "actual canvas click on a station window",
+      "result": {
+        "ready": true,
+        "revision": "1.5.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 2183,
+        "trianglesAllPasses": 26870713,
+        "modelTriangles": 1924298,
+        "fps": 1,
+        "view": 2,
+        "camera": [
+          16.839487373608222,
+          7.373428067579884,
+          10.033737434495292
+        ],
+        "cameraClearance": 19.87,
+        "transition": false,
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 387,
+          "settled": 2213,
+          "maxRadius": 5.113322337175763,
+          "allowedRadius": 5.12,
+          "energy": 0,
+          "shakeCount": 0
+        },
+        "story": {
+          "seconds": 2.100800000000745,
+          "running": false,
+          "phase": "候车",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "waiting",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "visible": false,
+            "parked": 0
+          },
+          "room": {
+            "residents": 2,
+            "activity": "returning to tea",
+            "greetedWindow": 4,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "walking",
+            "robinFlying": false
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 2,
+          "lastInteraction": "window"
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 57.116699999999234,
+          "windGust": 0.12,
+          "walkerPosition": [
+            -1.25,
+            1.539568523402733,
+            3.5975390882863745
+          ],
+          "walkingLegAngle": 0,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 0
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 0
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -0.35281363766005236,
+              6.930708818010508,
+              1.5709520741867693
+            ],
+            "sleighPosition": [
+              1.1354151572461006,
+              6.849176506895468,
+              1.8188518901536594
+            ],
+            "santaWavingArm": 1.3906398863173255
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "assets/winter-station-music.mp3"
+          },
+          "ambient": {
+            "enabled": true,
+            "playing": true,
+            "loaded": 4,
+            "duration": 40,
+            "source": "assets/winter-station-ambience.mp3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "assets/train-whistle.mp3"
+          },
+          "effects": {
+            "state": "running",
+            "counts": {
+              "bell": 0,
+              "bird": 2,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "test": "window click followed by actual greeting animation",
+      "result": {
+        "ready": true,
+        "revision": "1.5.0",
+        "webgl": "WebGL 2",
+        "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "viewport": [
+          1920,
+          1080
+        ],
+        "pixelRatio": 1.0000000298023224,
+        "drawCallsAllPasses": 2216,
+        "trianglesAllPasses": 26888703,
+        "modelTriangles": 1924298,
+        "fps": 1,
+        "view": 2,
+        "camera": [
+          16.839487373608222,
+          7.373428067579884,
+          10.033737434495292
+        ],
+        "cameraClearance": 19.87,
+        "transition": false,
+        "night": 1,
+        "autoOrbit": false,
+        "uiHidden": true,
+        "snow": {
+          "count": 2600,
+          "outside": 0,
+          "invalid": 0,
+          "moving": 423,
+          "settled": 2177,
+          "maxRadius": 5.114982091634765,
+          "allowedRadius": 5.12,
+          "energy": 0,
+          "shakeCount": 0
+        },
+        "story": {
+          "seconds": 2.100800000000745,
+          "running": false,
+          "phase": "候车",
+          "train": {
+            "offsetRadians": 0,
+            "distance": 0,
+            "wheelAngle": 0
+          },
+          "gift": {
+            "stage": "waiting",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "visible": false,
+            "parked": 0
+          },
+          "room": {
+            "residents": 2,
+            "activity": "waving through window",
+            "greetedWindow": 4,
+            "fireplace": true,
+            "teaSteam": true
+          },
+          "animals": {
+            "cat": "sleeping",
+            "robinFlying": true
+          },
+          "powder": {
+            "particles": 180,
+            "outside": 0
+          },
+          "clicks": 3,
+          "lastInteraction": "window"
+        },
+        "life": {
+          "people": 8,
+          "fairyLights": 64,
+          "windTime": 85.9593000000082,
+          "windGust": 0.364223943548891,
+          "walkerPosition": [
+            -0.5689371428562059,
+            1.5534984323136312,
+            3.7589170095166105
+          ],
+          "walkingLegAngle": -0.3979973974542347,
+          "conductorArm": 0.14,
+          "locomotive": {
+            "kind": "exhaust",
+            "particles": 100,
+            "burst": 0
+          },
+          "pressureValve": {
+            "kind": "pressure",
+            "particles": 60,
+            "burst": 0
+          },
+          "chimney": {
+            "kind": "chimney",
+            "particles": 90,
+            "burst": 0
+          },
+          "christmasVisitors": {
+            "flyingReindeer": 1,
+            "giftSleigh": true,
+            "giftParcels": 7,
+            "tethered": true,
+            "santaOnTrain": true,
+            "reindeerPosition": [
+              -1.3724013963488781,
+              6.920570748783904,
+              1.0799431843329466
+            ],
+            "sleighPosition": [
+              -0.27169392971350836,
+              6.937341834554011,
+              2.114877281788063
+            ],
+            "santaWavingArm": 1.3829067478851544
+          },
+          "lighting": {
+            "projectedLights": 13,
+            "volumetricBeams": 13,
+            "windowApertures": 9,
+            "shadowMaps": 10,
+            "depthClipped": true,
+            "shadowClipped": true,
+            "interiorRooms": true
+          }
+        },
+        "audio": {
+          "music": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "source": "assets/winter-station-music.mp3"
+          },
+          "ambient": {
+            "enabled": true,
+            "playing": true,
+            "loaded": 4,
+            "duration": 40,
+            "source": "assets/winter-station-ambience.mp3"
+          },
+          "whistle": {
+            "enabled": false,
+            "playing": false,
+            "loaded": 0,
+            "duration": 0,
+            "plays": 0,
+            "source": "assets/train-whistle.mp3"
+          },
+          "effects": {
+            "state": "running",
+            "counts": {
+              "bell": 0,
+              "bird": 3,
+              "chuff": 0
+            },
+            "followsAmbientSwitch": true
+          }
+        },
+        "externalRequests": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "parachute falling",
+      "ready": true,
+      "revision": "1.5.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 1531,
+      "trianglesAllPasses": 8503519,
+      "modelTriangles": 1924298,
+      "fps": 50,
+      "view": 2,
+      "camera": [
+        16.839487373608222,
+        7.373428067579884,
+        10.033737434495292
+      ],
+      "cameraClearance": 19.87,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 365,
+        "settled": 2235,
+        "maxRadius": 5.113591127721814,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "story": {
+        "seconds": 35.56489999999851,
+        "running": false,
+        "phase": "礼物降落",
+        "train": {
+          "offsetRadians": 0,
+          "distance": 0,
+          "wheelAngle": 0
+        },
+        "gift": {
+          "stage": "falling",
+          "position": [
+            3.2716621363804093,
+            5.645984794733507,
+            2.157119810800838
+          ],
+          "visible": true,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "grooming",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "life": {
+        "people": 8,
+        "fairyLights": 64,
+        "windTime": 264.82710000000253,
+        "windGust": 0.12,
+        "walkerPosition": [
+          -0.6983314285711393,
+          1.5430326452148446,
+          3.7379396116242987
+        ],
+        "walkingLegAngle": 0.09897490891747829,
+        "conductorArm": 0.14,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            0.4134281898376103,
+            7.159987967511144,
+            1.5599750689441187
+          ],
+          "sleighPosition": [
+            1.8929159913868956,
+            7.066653185251628,
+            1.2678599443999876
+          ],
+          "santaWavingArm": 1.3843742410030722
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 10,
+            "chuff": 0
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    },
+    {
+      "check": "child receives and thanks",
+      "ready": true,
+      "revision": "1.5.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 1540,
+      "trianglesAllPasses": 8518387,
+      "modelTriangles": 1924298,
+      "fps": 55,
+      "view": 2,
+      "camera": [
+        16.839487373608222,
+        7.373428067579884,
+        10.033737434495292
+      ],
+      "cameraClearance": 19.87,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 383,
+        "settled": 2217,
+        "maxRadius": 5.114721154420199,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "story": {
+        "seconds": 46.81159999999769,
+        "running": false,
+        "phase": "领取礼物",
+        "train": {
+          "offsetRadians": 0,
+          "distance": 0,
+          "wheelAngle": 0
+        },
+        "gift": {
+          "stage": "received",
+          "position": [
+            3.4835541597648962,
+            1.7565044094759412,
+            2.006807972578205
+          ],
+          "visible": true,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "sleeping",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "life": {
+        "people": 8,
+        "fairyLights": 64,
+        "windTime": 282.69880000000217,
+        "windGust": 0.12,
+        "walkerPosition": [
+          -0.9415657142854668,
+          1.5438629599093214,
+          3.6864339336172276
+        ],
+        "walkingLegAngle": -0.12269818590252556,
+        "conductorArm": 0.14,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            1.483720122178891,
+            6.92737694878056,
+            -0.9648893102078224
+          ],
+          "sleighPosition": [
+            0.48630438693422495,
+            6.951707421472815,
+            -2.0995684109605035
+          ],
+          "santaWavingArm": 2.423661653840616
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 11,
+            "chuff": 0
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    },
+    {
+      "check": "live departure whistle and chuffs",
+      "ready": true,
+      "revision": "1.5.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 2185,
+      "trianglesAllPasses": 26872445,
+      "modelTriangles": 1924298,
+      "fps": 56,
+      "view": 2,
+      "camera": [
+        16.839487373608222,
+        7.373428067579884,
+        10.033737434495292
+      ],
+      "cameraClearance": 19.87,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": false,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 408,
+        "settled": 2192,
+        "maxRadius": 5.117119209888367,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "story": {
+        "seconds": 11.678699999999262,
+        "running": false,
+        "phase": "列车缓行",
+        "train": {
+          "offsetRadians": 0.04618801071632428,
+          "distance": 0.1487253945065642,
+          "wheelAngle": -0.4721441095446482
+        },
+        "gift": {
+          "stage": "waiting",
+          "position": [
+            3.4835541597648962,
+            1.7565044094759412,
+            2.006807972578205
+          ],
+          "visible": false,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "walking",
+          "robinFlying": true
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "life": {
+        "people": 8,
+        "fairyLights": 64,
+        "windTime": 295.4120000000015,
+        "windGust": 0.2081662566395805,
+        "walkerPosition": [
+          -1.0685142857144585,
+          1.5487580924019961,
+          3.6531190935012927
+        ],
+        "walkingLegAngle": 0.26255911426466033,
+        "conductorArm": 2.3683324722821966,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0.03256090780839541
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0.03256090780839541
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            -1.376368643141492,
+            7.088348191344573,
+            1.0762006657013519
+          ],
+          "sleighPosition": [
+            -0.27895086917784995,
+            7.105436102404131,
+            2.114617256085146
+          ],
+          "santaWavingArm": 1.582783253215553
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": true,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "assets/train-whistle.mp3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 11,
+            "chuff": 7
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    },
+    {
+      "check": "ambient off suppresses automatic FX",
+      "before": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "assets/train-whistle.mp3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 12,
+            "chuff": 7
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "after": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 40,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "assets/train-whistle.mp3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 12,
+            "chuff": 7
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "story": {
+        "seconds": 10.193099999997774,
+        "running": false,
+        "phase": "列车缓行",
+        "train": {
+          "offsetRadians": 0.019346301442791012,
+          "distance": 0.06229509064578706,
+          "wheelAngle": -0.19776219252630814
+        },
+        "gift": {
+          "stage": "waiting",
+          "position": [
+            3.4835541597648962,
+            1.7565044094759412,
+            2.006807972578205
+          ],
+          "visible": false,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "stretching",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "errors": []
+    },
+    {
+      "check": "final real side-window click and wave",
+      "ready": true,
+      "revision": "1.5.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 1516,
+      "trianglesAllPasses": 8498995,
+      "modelTriangles": 1924298,
+      "fps": 65,
+      "view": 2,
+      "camera": [
+        16.83948737360823,
+        7.373428067579885,
+        10.033737434495293
+      ],
+      "cameraClearance": 19.87,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 406,
+        "settled": 2194,
+        "maxRadius": 5.114996117316675,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "story": {
+        "seconds": 10.193099999997774,
+        "running": false,
+        "phase": "列车缓行",
+        "train": {
+          "offsetRadians": 0.019346301442791012,
+          "distance": 0.06229509064578706,
+          "wheelAngle": -0.19776219252630814
+        },
+        "gift": {
+          "stage": "waiting",
+          "position": [
+            3.4835541597648962,
+            1.7565044094759412,
+            2.006807972578205
+          ],
+          "visible": false,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "waving through window",
+          "greetedWindow": 4,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "walking",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 1,
+        "lastInteraction": "window"
+      },
+      "life": {
+        "people": 8,
+        "fairyLights": 64,
+        "windTime": 393.66950000000236,
+        "windGust": 0.12,
+        "walkerPosition": [
+          -0.869371428571698,
+          1.5463998620762531,
+          3.7033914271250334
+        ],
+        "walkingLegAngle": -0.19518110495771862,
+        "conductorArm": 2.283470981422062,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 7.947616289183394e-22
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 7.947616289183394e-22
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            1.2235105390016792,
+            6.959419522223337,
+            1.2051063240139759
+          ],
+          "sleighPosition": [
+            2.4304922171467993,
+            6.911635858106414,
+            0.2974506995805949
+          ],
+          "santaWavingArm": 1.5365216058487308
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 40,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "assets/train-whistle.mp3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 12,
+            "chuff": 7
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    },
+    {
+      "check": "drag rotates without triggering clicks",
+      "clicksBefore": 1,
+      "clicksAfter": 1,
+      "cameraBefore": [
+        16.83948737360823,
+        7.373428067579885,
+        10.033737434495293
+      ],
+      "cameraAfter": [
+        12.937103265343989,
+        8.960542239087175,
+        14.335021663981973
+      ]
+    },
+    {
+      "check": "390x844 responsive toolbar",
+      "buttons": [
+        {
+          "bottom": 807.3333549499512,
+          "name": "环绕",
+          "right": 105,
+          "top": 758.6666870117188,
+          "x": 72
+        },
+        {
+          "bottom": 807.3333549499512,
+          "name": "雪夜",
+          "right": 143,
+          "top": 758.6666870117188,
+          "x": 110
+        },
+        {
+          "bottom": 807.3333549499512,
+          "name": "鸣笛",
+          "right": 181,
+          "top": 758.6666870117188,
+          "x": 148
+        },
+        {
+          "bottom": 807.3333549499512,
+          "name": "故事",
+          "right": 214,
+          "top": 758.6666870117188,
+          "x": 181
+        },
+        {
+          "bottom": 807.3333549499512,
+          "name": "音乐",
+          "right": 247,
+          "top": 758.6666870117188,
+          "x": 214
+        },
+        {
+          "bottom": 807.3333549499512,
+          "name": "环境",
+          "right": 280,
+          "top": 758.6666870117188,
+          "x": 247
+        },
+        {
+          "bottom": 807.3333549499512,
+          "name": "重置",
+          "right": 318,
+          "top": 758.6666870117188,
+          "x": 285
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "check": "single HTML embedded audio loaded",
+      "ready": true,
+      "revision": "1.5.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 1522,
+      "trianglesAllPasses": 8499007,
+      "modelTriangles": 1924298,
+      "fps": 87,
+      "view": 0,
+      "camera": [
+        11.275047030377557,
+        11.028109107465983,
+        22.196464553528198
+      ],
+      "cameraClearance": 25.83,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": false,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 479,
+        "settled": 2121,
+        "maxRadius": 5.1146923772021395,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "story": {
+        "seconds": 17.273000000000007,
+        "running": true,
+        "phase": "列车缓行",
+        "train": {
+          "offsetRadians": 0.105,
+          "distance": 0.3381,
+          "wheelAngle": -1.0733333333333335
+        },
+        "gift": {
+          "stage": "waiting",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "visible": false,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "walking",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "life": {
+        "people": 8,
+        "fairyLights": 64,
+        "windTime": 17.273000000000007,
+        "windGust": 0.12,
+        "walkerPosition": [
+          -1.25,
+          1.539568523402733,
+          3.5975390882863745
+        ],
+        "walkingLegAngle": 0,
+        "conductorArm": 2.479976116083472,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0.004130498641504231
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0.004130498641504231
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            0.0987772080580569,
+            7.130405299802619,
+            -1.5977422070066583
+          ],
+          "sleighPosition": [
+            -1.4076937945852286,
+            7.036789080757841,
+            -1.666356376291831
+          ],
+          "santaWavingArm": 1.446323226140714
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 0,
+            "bird": 0,
+            "chuff": 11
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    },
+    {
+      "check": "single HTML music off with ambience still playing",
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 3,
+          "source": "embedded original MP3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 2,
+            "bird": 6,
+            "chuff": 67
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "story": {
+        "seconds": 162.2026000000014,
+        "running": true,
+        "phase": "列车缓行",
+        "train": {
+          "offsetRadians": 0.105,
+          "distance": 0.3381,
+          "wheelAngle": -1.0733333333333335
+        },
+        "gift": {
+          "stage": "parked",
+          "position": [
+            2.4700007530004457,
+            1.5608051985702514,
+            3.0299995627616543
+          ],
+          "visible": false,
+          "parked": 2
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "sleeping",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "errors": []
+    },
+    {
+      "check": "final standalone delivery render",
+      "ready": true,
+      "revision": "1.5.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 2212,
+      "trianglesAllPasses": 26889445,
+      "modelTriangles": 1924298,
+      "fps": 57,
+      "view": 0,
+      "camera": [
+        11.275047030377557,
+        11.028109107465983,
+        22.196464553528198
+      ],
+      "cameraClearance": 25.83,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 392,
+        "settled": 2208,
+        "maxRadius": 5.114225030722388,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "story": {
+        "seconds": 35.68459999999776,
+        "running": false,
+        "phase": "礼物降落",
+        "train": {
+          "offsetRadians": 0,
+          "distance": 0,
+          "wheelAngle": 0
+        },
+        "gift": {
+          "stage": "falling",
+          "position": [
+            3.2784795330599708,
+            5.566042429560879,
+            2.1530662235859634
+          ],
+          "visible": true,
+          "parked": 0
+        },
+        "room": {
+          "residents": 2,
+          "activity": "tea and a quiet stroll",
+          "greetedWindow": -1,
+          "fireplace": true,
+          "teaSteam": true
+        },
+        "animals": {
+          "cat": "walking",
+          "robinFlying": false
+        },
+        "powder": {
+          "particles": 180,
+          "outside": 0
+        },
+        "clicks": 0,
+        "lastInteraction": "none"
+      },
+      "life": {
+        "people": 8,
+        "fairyLights": 64,
+        "windTime": 176.00640000000237,
+        "windGust": 1,
+        "walkerPosition": [
+          -1.1364457142859854,
+          1.5467721877716807,
+          3.63342736038019
+        ],
+        "walkingLegAngle": 0.20581898196993664,
+        "conductorArm": 0.14,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 1.7415093374242844e-8
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 1.7415093374242844e-8
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            0.8090948077247082,
+            7.10466050991951,
+            -1.4406908819420565
+          ],
+          "sleighPosition": [
+            -0.5852501329895685,
+            7.062805426826201,
+            -2.021188186693553
+          ],
+          "santaWavingArm": 1.5604509712675712
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 3,
+          "source": "embedded original MP3"
+        },
+        "effects": {
+          "state": "running",
+          "counts": {
+            "bell": 2,
+            "bird": 7,
+            "chuff": 68
+          },
+          "followsAmbientSwitch": true
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  ]
+}

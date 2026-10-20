@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {V,TAU,rand,mesh,box,cyl,ball,torus,beam,pipe,group,label,snowLump} from './craft.js';
+import {V,TAU,rand,mesh,box,cyl,ball,torus,beam,pipe,group,label,snowLump,batch} from './craft.js';
 import {GROUND,terrainHeight} from './world-model.js';
 
 export const TRACK_R=3.22,TRACK_Z=-.16;
@@ -18,14 +18,14 @@ export function makeTrack(root,M){const g=group(root);g.name='Curved rails, slee
 function rivets(p,M,x1,x2,y,z,n=15){for(let i=0;i<n;i++)ball(p,.013,M.brass,x1+(x2-x1)*i/(n-1),y,z,1,1,.5);}
 function wheel(p,M,x,y,z,r){const w=group(p,x,y,z);cyl(w,r,r,.09,M.black,0,0,0,40).rotation.x=Math.PI/2;const rim=torus(w,r-.025,.023,M.steel,0,0,z>0?.054:-.054);cyl(w,r*.72,r*.72,.1,M.engine,0,0,0,32).rotation.x=Math.PI/2;
   for(let i=0;i<12;i++){let a=i/12*TAU;beam(w,[Math.cos(a)*r*.18,Math.sin(a)*r*.18,z>0?.06:-.06],[Math.cos(a)*r*.77,Math.sin(a)*r*.77,z>0?.06:-.06],.017,M.brass,.014,6);}cyl(w,r*.19,r*.19,.15,M.brass,0,0,0,24).rotation.x=Math.PI/2;return w;}
-export function makeTrain(root,M){
-  makeTrack(root,M);const a=.65,v=onTrack(a),p=group(root,v.x,GROUND+.17,v.z,a);p.name='No. 24 · brass-riveted steam locomotive';
+export function makeTrain(root,M,movingParent=root){
+  makeTrack(root,M);const wheels=[],rods=[];const a=.65,v=onTrack(a),p=group(movingParent,v.x,GROUND+.17,v.z,a);p.name='No. 24 · brass-riveted steam locomotive';p.userData.interaction='train';
   // Chassis and buffer beam.
   box(p,2.5,.15,.92,M.black,-.03,.51,0,.025);box(p,2.29,.06,.94,M.red,-.04,.61,0,.018);
   for(let z of [-.53,.53]){
-    for(let x of [-.65,-.01,.63])wheel(p,M,x,.31,z,.315);
+    for(let x of [-.65,-.01,.63]){const w=wheel(p,M,x,.31,z,.315);batch(w);w.traverse(o=>{if(o.isMesh)o.userData.dynamic=true;});wheels.push({g:w,r:.315});}
     // Forged side rods, brass crank pins, springs and pistons.
-    beam(p,[-.66,.24,z*1.14],[.65,.24,z*1.14],.025,M.steel);for(let x of [-.65,-.01,.63]){cyl(p,.045,.045,.04,M.brass,x,.24,z*1.18,16).rotation.x=Math.PI/2;for(let j=0;j<4;j++)box(p,.28,.014,.024,M.iron,x,.54+j*.02,z);}
+    const rod=group(p,0,.24,z*1.14);beam(rod,[-.66,0,0],[.65,0,0],.025,M.steel);for(let x of [-.65,-.01,.63])cyl(rod,.045,.045,.04,M.brass,x,0,z*.04,16).rotation.x=Math.PI/2;batch(rod);rod.traverse(o=>{if(o.isMesh)o.userData.dynamic=true;});rods.push(rod);for(let x of [-.65,-.01,.63])for(let j=0;j<4;j++)box(p,.28,.014,.024,M.iron,x,.54+j*.02,z);
     box(p,.33,.21,.18,M.black,.91,.35,z*.91,.05);beam(p,[.6,.26,z],[1.01,.36,z],.025,M.steel);
     box(p,2.21,.045,.12,M.iron,-.01,.69,z*.94,.008);rivets(p,M,-1.03,1,.61,z*.95,20);
   }
@@ -67,12 +67,12 @@ export function makeTrain(root,M){
   pipe(p,[[1.34,.46,0],[1.6,.46,0],[1.64,.36,0]],.026,M.iron);
   // Snow tucked along upper horizontal surfaces, leaving the moving machinery visible.
   for(let i=0;i<10;i++)snowLump(p,-.45+i*.145,1.405,rand(-.025,.025),.12,.035,.17,M.snow);
-  const headPos=p.localToWorld(V(1.24,1.41,0));const head=new THREE.PointLight(0xffc378,3.4,2.4,2);head.position.copy(headPos);root.add(head);
+  const headPos=V();const head=new THREE.PointLight(0xffc378,3.4,2.4,2);head.position.set(1.24,1.41,0);p.add(head);
   // Mahogany passenger coach behind the engine, placed tangent to the same curve.
-  const ca=-.245,cv=onTrack(ca),car=group(root,cv.x,GROUND+.17,cv.z,ca);car.name='Nord Express · illuminated passenger carriage';
+  const ca=-.245,cv=onTrack(ca),car=group(movingParent,cv.x,GROUND+.17,cv.z,ca);car.name='Nord Express · illuminated passenger carriage';car.userData.interaction='train';
   box(car,1.94,.13,.92,M.black,0,.42,0,.02);box(car,1.78,1.08,.86,M.red,0,1,0,.03);box(car,1.82,.13,.91,M.engine,0,.64,0,.02);
   for(let z of [-.46,.46]){
-    for(let x of [-.67,.67])wheel(car,M,x,.24,z,.22);
+    for(let x of [-.67,.67]){const w=wheel(car,M,x,.24,z,.22);batch(w);w.traverse(o=>{if(o.isMesh)o.userData.dynamic=true;});wheels.push({g:w,r:.22});}
     for(let x of [-.59,-.2,.2,.59]){box(car,.3,.49,.027,M.darkwood,x,1.16,z,.022);box(car,.244,.415,.03,M.warm,x,1.16,z*1.055,.016);box(car,.021,.42,.035,M.brass,x,1.16,z*1.1);box(car,.32,.025,.045,M.brass,x,.93,z*1.06);}
     for(let x=-.84;x<.89;x+=.12)box(car,.009,.3,.01,M.darkwood,x,.8,z);box(car,1.76,.028,.035,M.brass,0,1.46,z);rivets(car,M,-.83,.83,.58,z,18);
     label(car,'N O R D   E X P R E S S',1.4,.13,0,.72,z*1.07,{bg:'#66392e',ink:'#ddc793',fontScale:.47,border:false}).rotation.y=z<0?Math.PI:0;
@@ -83,6 +83,14 @@ export function makeTrain(root,M){
   let geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));geo.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geo.setIndex(idx);geo.computeVertexNormals();mesh(car,geo,M.snow);for(let i=0;i<15;i++)snowLump(car,(i/14-.5)*1.99,1.68,.48,.12,.035,.08,M.snow);
   for(let x of [-.6,0,.6]){cyl(car,.055,.065,.07,M.black,x,1.85,0);snowLump(car,x,1.9,0,.075,.03,.07,M.snow);}
   // Flexible coupling between cars follows the intervening arc.
-  const c1=onTrack(.225);box(root,.1,.1,.12,M.iron,c1.x,GROUND+.59,c1.z).rotation.y=.2;
-  root.updateMatrixWorld(true);return {steamOrigin:p.localToWorld(V(.78,1.91,0)),pressureOrigin:p.localToWorld(V(.02,1.67,.24)),head,headPos:p.localToWorld(V(1.23,1.41,0)),santaSeat:car.localToWorld(V(-.16,1.81,.02)),coachAngle:ca};
+  const c1=onTrack(.225),coupling=box(movingParent,.34,.1,.12,M.iron,c1.x,GROUND+.59,c1.z);coupling.userData.dynamic=true;
+  batch(p);batch(car);let offset=0;
+  const result={engine:p,coach:car,wheels,rods,head,headPos,steamOrigin:V(),pressureOrigin:V(),santaSeat:V(),headDirection:V(),coachAngle:ca,triangles:0,update,diagnostics:()=>({offsetRadians:offset,distance:offset*TRACK_R,wheelAngle:wheels[0].g.rotation.z})};
+  function update(nextOffset=0){offset=nextOffset;for(const [g,base]of[[p,a],[car,ca]]){const v=onTrack(base+offset);g.position.set(v.x,GROUND+.17,v.z);g.rotation.y=base+offset;g.updateMatrix();}
+    const distance=offset*TRACK_R;for(const w of wheels)w.g.rotation.z=-distance/w.r;
+    for(const rod of rods){rod.position.x=-Math.sin(distance/.315)*.07;rod.position.y=.31-Math.cos(distance/.315)*.07;}
+    const c=onTrack(.225+offset);coupling.position.set(c.x,GROUND+.59,c.z);coupling.rotation.y=.225+offset;
+    result.headPos.set(1.23,1.41,0).applyMatrix4(p.matrix);result.steamOrigin.set(.78,1.91,0).applyMatrix4(p.matrix);result.pressureOrigin.set(.02,1.67,.24).applyMatrix4(p.matrix);result.santaSeat.set(-.16,1.81,.23).applyMatrix4(car.matrix);result.coachAngle=ca+offset;result.headDirection.set(Math.cos(a+offset),0,-Math.sin(a+offset));
+  }
+  for(const g of [p,car])g.traverse(o=>{if(o.isMesh)result.triangles+=(o.geometry.index?.count||o.geometry.attributes.position.count)/3;});update(0);return result;
 }

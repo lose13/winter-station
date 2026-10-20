@@ -23,6 +23,7 @@
       <p class="chinese-title">冬 日 · 候 车 室</p>
       <div class="story-line"></div>
       <p class="description">末班列车还未驶离，<br>雪已悄悄落满了站台。<br>把这个冬天，轻轻握在手里。</p>
+      <div id="story-moment" class="story-moment" aria-live="polite">车站小故事 · 候车</div>
       <div class="edition"><span>HANDCRAFTED IN LIGHT</span><span>EDITION 01 / WINTER 1924</span></div>
       <button id="shake" class="shake-button"><span class="snow-icon">✣</span><span>轻摇雪景球<small>SHAKE THE GLOBE</small></span><span class="button-arrow">↗</span></button>
       <div id="shake-state" class="shake-state" aria-live="polite">轻轻一摇，让时间慢下来。</div>
@@ -37,13 +38,15 @@
       <button data-view="5" aria-pressed="false" title="时光背面"><span>06</span><i></i><b>时光背面</b></button>
     </aside>
     <footer class="bottom ui">
-      <div class="interaction-hint"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v7"/></svg><span>拖动旋转 <i>·</i> 滚轮靠近</span></div>
+      <div class="interaction-hint"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 3v7"/></svg><span>拖动旋转 <i>·</i> 滚轮靠近 <i>·</i> 点击模型发现回应</span></div>
       <div class="toolbar" role="toolbar" aria-label="场景控制">
         <button id="orbit" aria-pressed="true" title="自动环绕 · 约50秒一圈 · A"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="5"/><path d="m18 5 3 6-6-1"/></svg><span>环绕</span></button>
         <span class="divider"></span>
         <button id="daynight" aria-pressed="true" title="白天与夜晚 · N"><svg viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.1a8.5 8.5 0 1 0 10 10.4Z"/></svg><span>雪夜</span></button>
         <span class="divider"></span>
         <button id="whistle" title="火车鸣笛 · W"><svg viewBox="0 0 24 24"><path d="m4 10 7-4v12l-7-4H2v-4h2ZM15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></svg><span>鸣笛</span></button>
+        <button id="story" aria-pressed="true" title="暂停或继续车站故事 · P"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 7v10M15 7v10"/></svg><span>故事</span></button>
+        <button id="inside" aria-pressed="false" title="走进候车室 · I"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h14V9M10 21V11h5v10M14 16h.01"/></svg><span>进站</span></button>
         <button id="music" aria-pressed="false" title="原创圣诞小圆舞曲 · M"><svg viewBox="0 0 24 24"><path d="M9 17V5l12-2v12M9 8l12-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="18" cy="16" rx="3" ry="2"/></svg><span>音乐</span></button>
         <button id="ambient" aria-pressed="false" title="冬风与车站环境音 · E"><svg viewBox="0 0 24 24"><path d="M3 8h11c5 0 5-6 1-6M2 12h16c5 0 5 6 1 6M5 16h5c4 0 4 6 0 6"/></svg><span>环境</span></button>
         <span class="divider"></span>
@@ -52,6 +55,16 @@
       <div class="specimen"><span class="status-dot"></span> REAL-TIME 3D <span class="slash">/</span> <span id="quality">HIGH FIDELITY</span></div>
     </footer>
     <div class="view-caption ui"><span id="view-number">01 / 06</span><span id="view-title">The winter keeps its little secrets.</span></div>
+    <section id="room-panel" class="room-panel ui" aria-label="候车室内机位" hidden>
+      <div class="room-heading"><span>INSIDE WINTER STATION</span><button id="leave-station" title="返回雪景球 · Esc">返回雪景球 ↗</button></div>
+      <h2 id="room-title">候车室全景</h2>
+      <div class="room-views" role="group" aria-label="选择室内机位">
+        <button data-room="0" aria-pressed="true" title="候车室全景 · 7">候车室全景</button>
+        <button data-room="1" aria-pressed="false" title="窗边茶话 · 8">窗边茶话</button>
+        <button data-room="2" aria-pressed="false" title="炉边阅读 · 9">炉边阅读</button>
+      </div>
+    </section>
+    <div id="camera-curtain" aria-hidden="true"></div>
     <div id="toast" role="status"></div>
     <div id="loading"><div class="loading-symbol">✳</div><div class="loading-name">Winter Station</div><div class="loading-caption">正在点亮这个小小的冬天</div><div class="loading-line"><i></i></div></div>
     <div id="error" hidden><h2>无法启动 3D 场景</h2><p></p><button onclick="location.reload()">重新加载</button></div>

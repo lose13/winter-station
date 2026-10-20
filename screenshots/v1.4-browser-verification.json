@@ -1,0 +1,472 @@
+[
+  {
+    "test": "v1.4 rear window light and live animated visitors",
+    "result": {
+      "ready": true,
+      "revision": "1.4.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 1428,
+      "trianglesAllPasses": 27233641,
+      "modelTriangles": 1924864,
+      "fps": 1,
+      "view": 5,
+      "camera": [
+        1.9598168862543337,
+        11.796551761762084,
+        -23.966200377044157
+      ],
+      "cameraClearance": 25.23,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 364,
+        "settled": 2236,
+        "maxRadius": 5.111051161624758,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 39.18110000000134,
+        "windGust": 0.630785946456281,
+        "walkerPosition": [
+          -1.25,
+          1.539568523402733,
+          3.4073379430606234
+        ],
+        "walkingLegAngle": 0,
+        "conductorArm": 2.1071696572006737,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            -1.5365028857335221,
+            7.131079791937266,
+            -0.901692044259595
+          ],
+          "boundingBoxMaxRadius": 5.0397476784168065,
+          "santaWavingArm": 2.4722084754492895
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "v1.4 standalone embedded audio and new scene",
+    "result": {
+      "ready": true,
+      "revision": "1.4.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 913,
+      "trianglesAllPasses": 8217301,
+      "modelTriangles": 1924864,
+      "fps": 86,
+      "view": 0,
+      "camera": [
+        -7.72202702086917,
+        7.7414481442820655,
+        11.877004970117003
+      ],
+      "cameraClearance": 14.61,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": false,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 405,
+        "settled": 2195,
+        "maxRadius": 5.113544289198218,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 48.888100000001316,
+        "windGust": 0.14311514326270308,
+        "walkerPosition": [
+          -0.44999999999999996,
+          1.539568523402733,
+          3.5931187031587473
+        ],
+        "walkingLegAngle": 0,
+        "conductorArm": 2.298378989077983,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 1.6535187411897865e-14
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 1.6535187411897865e-14
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            1.8178769613557846,
+            6.9280227109037815,
+            -0.3385832605151407
+          ],
+          "boundingBoxMaxRadius": 4.775926088475088,
+          "santaWavingArm": 2.548291735775759
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 55.384626,
+          "source": "embedded original MP3"
+        },
+        "ambient": {
+          "enabled": true,
+          "playing": true,
+          "loaded": 4,
+          "duration": 40,
+          "source": "embedded original MP3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 4,
+          "duration": 4.8,
+          "plays": 1,
+          "source": "embedded original MP3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "final complete flying rig and front window illumination",
+    "result": {
+      "ready": true,
+      "revision": "1.4.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 966,
+      "trianglesAllPasses": 8382687,
+      "modelTriangles": 1924864,
+      "fps": 38,
+      "view": 1,
+      "camera": [
+        -2.71738527837308,
+        9.151569151108522,
+        18.268546275485498
+      ],
+      "cameraClearance": 19.13,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 448,
+        "settled": 2152,
+        "maxRadius": 5.112560360706353,
+        "allowedRadius": 5.12,
+        "energy": 0,
+        "shakeCount": 0
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 20.997600000001487,
+        "windGust": 0.6489202201426452,
+        "walkerPosition": [
+          -1.1359885714284015,
+          1.5482804733719953,
+          3.4452642019114297
+        ],
+        "walkingLegAngle": 0.24891285626463824,
+        "conductorArm": 2.412019088232798,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            1.5097382904995633,
+            6.95462089831163,
+            -0.9345476642055479
+          ],
+          "sleighPosition": [
+            0.5402898982798277,
+            6.980246373829879,
+            -2.093184765427079
+          ],
+          "santaWavingArm": 2.350354659346477
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  },
+  {
+    "test": "final rig, shaking, shadow and sphere confinement",
+    "result": {
+      "ready": true,
+      "revision": "1.4.0",
+      "webgl": "WebGL 2",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Laptop GPU (0x00002820) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "pixelRatio": 1.0000000298023224,
+      "drawCallsAllPasses": 1490,
+      "trianglesAllPasses": 27398199,
+      "modelTriangles": 1924864,
+      "fps": 40,
+      "view": 0,
+      "camera": [
+        11.275047030377557,
+        11.028109107465983,
+        22.196464553528198
+      ],
+      "cameraClearance": 25.83,
+      "transition": false,
+      "night": 1,
+      "autoOrbit": false,
+      "uiHidden": true,
+      "snow": {
+        "count": 2600,
+        "outside": 0,
+        "invalid": 0,
+        "moving": 435,
+        "settled": 2165,
+        "maxRadius": 5.113825783589514,
+        "allowedRadius": 5.12,
+        "energy": 0.004960174855581017,
+        "shakeCount": 1
+      },
+      "life": {
+        "people": 6,
+        "fairyLights": 64,
+        "windTime": 95.77820000000295,
+        "windGust": 0.12167517204086324,
+        "walkerPosition": [
+          -1.110365714286052,
+          1.5530130715850061,
+          3.4532378804249833
+        ],
+        "walkingLegAngle": -0.3841299480649441,
+        "conductorArm": 2.375418290504037,
+        "locomotive": {
+          "kind": "exhaust",
+          "particles": 100,
+          "burst": 0
+        },
+        "pressureValve": {
+          "kind": "pressure",
+          "particles": 60,
+          "burst": 0
+        },
+        "chimney": {
+          "kind": "chimney",
+          "particles": 90,
+          "burst": 0
+        },
+        "christmasVisitors": {
+          "flyingReindeer": 1,
+          "giftSleigh": true,
+          "giftParcels": 7,
+          "tethered": true,
+          "santaOnTrain": true,
+          "reindeerPosition": [
+            0.08334304832057285,
+            7.116184655626148,
+            -1.5983929809865494
+          ],
+          "sleighPosition": [
+            -1.423553177580706,
+            7.022098889102959,
+            -1.6561720031505318
+          ],
+          "santaWavingArm": 2.3395013503592366
+        },
+        "lighting": {
+          "projectedLights": 13,
+          "volumetricBeams": 13,
+          "windowApertures": 9,
+          "shadowMaps": 10,
+          "depthClipped": true,
+          "shadowClipped": true,
+          "interiorRooms": true
+        }
+      },
+      "audio": {
+        "music": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-music.mp3"
+        },
+        "ambient": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "source": "assets/winter-station-ambience.mp3"
+        },
+        "whistle": {
+          "enabled": false,
+          "playing": false,
+          "loaded": 0,
+          "duration": 0,
+          "plays": 0,
+          "source": "assets/train-whistle.mp3"
+        }
+      },
+      "externalRequests": [],
+      "errors": []
+    }
+  }
+]

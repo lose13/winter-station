@@ -40,7 +40,8 @@ function archedWindow(p,M,x,y,z,ry=0,w=.57,h=1.09){
   // Real annular frames surround an open aperture. No opaque luminous backing.
   const trim=arcShape(w+.11,h+.06);trim.holes.push(archHole(0,.03,w,h));extrude(q,trim,.065,M.cream,0,-.03,-.045,.008);
   const frame=arcShape(w,h);frame.holes.push(archHole(0,.035,w-.09,h-.08));extrude(q,frame,.035,M.darkwood,0,0,.027,.005);
-  const pane=mesh(q,new THREE.ShapeGeometry(arcShape(w-.09,h-.08)),M.windowGlass,0,.035,.068);pane.castShadow=false;pane.renderOrder=1;
+  const glassGeo=new THREE.ShapeGeometry(arcShape(w-.09,h-.08)),glassUv=glassGeo.attributes.uv;for(let i=0;i<glassUv.count;i++)glassUv.setXY(i,glassUv.getX(i)/(w-.09)+.5,glassUv.getY(i)/(h-.08));
+  const pane=mesh(q,glassGeo,M.windowGlass,0,.035,.068);pane.castShadow=false;pane.renderOrder=1;
   box(q,.035,h-.07,.036,M.darkwood,0,h*.5,.083);box(q,w-.07,.035,.036,M.darkwood,0,h*.46,.084);box(q,w-.10,.026,.036,M.darkwood,0,h*.74,.084);
   box(q,w+.2,.07,.18,M.cream,0,-.045,.045,.015);snowLump(q,0,-.005,.084,w*.65,.04,.1,M.snow);
   for(let side of [-1,1]){box(q,.13,h-.18,.04,M.engine,side*(w*.5+.16),h*.43,.007,.012);for(let t=0;t<7;t++)box(q,.105,.018,.025,M.black,side*(w*.5+.16),.12+t*.103,.032);}
@@ -68,14 +69,21 @@ function stationInterior(p,M){
   box(g,1.05,.46,.3,M.engine,-.08,1.01,-.53,.025);box(g,1.12,.055,.37,M.oak,-.08,1.27,-.53,.016);
   for(let x of [-.38,.18]){box(g,.44,.32,.018,M.darkwood,x,1.02,-.366,.012);box(g,.38,.26,.021,M.engine,x,1.02,-.352,.01);}
   box(g,.48,.06,.19,M.brass,-.09,1.32,-.52,.01);box(g,.15,.13,.16,M.black,.21,1.35,-.52,.018);
-  for(let x of [-1.24,1.24]){box(g,.28,.065,.91,M.oak,x,.99,0,.012);box(g,.045,.32,.91,M.engine,x+Math.sign(x)*.12,1.17,0,.012);for(let z of [-.31,.31])box(g,.04,.24,.04,M.darkwood,x,.87,z);}
+  for(let x of [-1.05,1.05]){box(g,.28,.065,.91,M.oak,x,.99,0,.012);box(g,.045,.32,.91,M.engine,x+Math.sign(x)*.12,1.17,0,.012);for(let z of [-.31,.31])box(g,.04,.24,.04,M.darkwood,x,.87,z);}
   for(let x of [-.82,.82]){
     beam(g,[x,2.22,-.08],[x,1.96,-.08],.01,M.brass);const shade=mesh(g,new THREE.SphereGeometry(.14,24,12,0,TAU,0,Math.PI*.52),M.cream,x,1.94,-.08);shade.scale.y=.57;
     torus(g,.139,.009,M.brass,x,1.935,-.08).rotation.x=Math.PI/2;ball(g,.048,M.filament,x,1.90,-.08);
-    const light=new THREE.PointLight(0xffbd75,6,3,2);light.position.set(x,1.85,-.08);g.add(light);p.userData.interiorLights.push(light);
+    const light=new THREE.SpotLight(0xffc78b,6,3,1.12,.65,2);light.position.set(x,1.85,-.08);light.target.position.set(x,.80,-.08);light.castShadow=true;light.shadow.mapSize.set(512,512);light.shadow.camera.near=.04;light.shadow.camera.far=3;light.shadow.normalBias=.003;light.shadow.bias=-.00008;light.shadow.autoUpdate=false;light.shadow.needsUpdate=true;g.add(light,light.target);p.userData.interiorLights.push(light);
   }
-  const poster=group(g,0,1.64,-.93);label(poster,'MERRY CHRISTMAS\nNORD EXPRESS',.78,.34,0,0,0,{bg:'#33423b',ink:'#f4d6a0',fontScale:.25});
+  const poster=group(g,-.51,1.61,-.935);box(poster,.49,.50,.025,M.darkwood);label(poster,'MERRY\nCHRISTMAS\nNORD EXPRESS\n1924',.43,.44,0,0,.017,{bg:'#33423b',ink:'#f4d6a0',fontScale:.18});
   const parcels=group(g,-.7,.78,-.57);box(parcels,.25,.2,.23,M.red,0,.1,0,.016);box(parcels,.035,.205,.24,M.gold,0,.1,0);box(parcels,.255,.205,.027,M.gold,0,.1,0);
+  // Interior face of the existing closed platform door, with period hardware.
+  box(g,.72,1.25,.05,M.darkwood,0,1.405,.932,.012);box(g,.62,1.15,.018,M.engine,0,1.405,.899,.008);
+  for(let x of [-.145,.145])for(let y of [1.13,1.68]){box(g,.24,.45,.012,M.darkwood,x,y,.884,.008);box(g,.20,.40,.012,M.engine,x,y,.875,.006);}
+  box(g,.028,1.1,.02,M.brass,0,1.40,.866);box(g,.035,.14,.018,M.brass,-.23,1.35,.869,.006);ball(g,.024,M.gold,-.23,1.35,.845);
+  const exitSign=group(g,0,2.087,.91,Math.PI);label(exitSign,'PLATFORM  1',.54,.105,0,0,0,{bg:'#33423b',ink:'#edd9af',fontScale:.43});
+  box(g,.28,.085,.045,M.oak,.53,1.90,.92,.009);for(let x of [.45,.53,.61]){pipe(g,[[x,1.88,.91],[x,1.83,.87],[x,1.85,.845]],.008,M.brass);}box(g,.13,.36,.025,M.cloth,.53,1.65,.88,.015);
+  for(let z of [-.947,.947])box(g,3.02,.10,.025,M.darkwood,0,.835,z);for(let x of [-1.505,1.505])box(g,.025,.10,1.89,M.darkwood,x,.835,0);
 }
 
 function roofSnow(p,M){
@@ -93,9 +101,10 @@ export function makeStation(root,M){
   box(p,3.43,.18,2.35,M.stone,0,0,0,.06);box(p,3.28,.66,2.15,M.brick,0,.4,0);
   perforatedWall(p,M,3.25,1.06,0,[[-1.03,.83,.57,1.06],[1.03,.83,.57,1.06]]);
   perforatedWall(p,M,3.25,-1.06,Math.PI,[[-1.02,.84,.51,1.03],[0,.84,.51,1.03],[1.02,.84,.51,1.03]]);
-  for(let side of [-1,1]){const wall=perforatedWall(p,M,2.12,0,side*Math.PI/2,[[-.49,.84,.54,1.06],[.47,.84,.54,1.06]]);wall.position.x=side*1.625;}
+  for(let side of [-1,1]){const wall=perforatedWall(p,M,2.12,0,side*Math.PI/2,[[side*.49,.84,.54,1.06],[-side*.47,.84,.54,1.06]]);wall.position.x=side*1.625;}
   stationInterior(p,M);
-  box(p,3.4,.09,2.23,M.cream,0,.75,0,.015);box(p,3.36,.09,2.25,M.darkwood,0,2.26,0);
+  // The exterior belt is a perimeter moulding, leaving the real oak floor visible.
+  for(let z of [-1.055,1.055])box(p,3.4,.09,.12,M.cream,0,.75,z,.015);for(let x of [-1.64,1.64])box(p,.12,.09,1.99,M.cream,x,.75,0,.015);box(p,3.36,.09,2.25,M.darkwood,0,2.26,0);
   for(let x of [-1.61,1.61])for(let z of [-1.07,1.07]){box(p,.11,2.28,.11,M.darkwood,x,1.22,z,.012);for(let j=0;j<5;j++)box(p,.22,.12,.22,M.cream,x,.13+j*.14,z,.015);}
   for(let z of [-1.077,1.077]){
     for(let x of [-.58,.58])box(p,.072,1.38,.055,M.darkwood,x,1.5,z);
@@ -178,17 +187,17 @@ function bench(root,M,x,z,ry){const g=group(root,x,terrainHeight(x,z),z,ry);for(
 function suitcase(root,M,x,z,s,ry=0){const g=group(root,x,terrainHeight(x,z)+s*.25,z,ry);box(g,s,s*.5,s*.33,M.leather,0,0,0,.04);for(let a of [-.31,.31]){box(g,.035,s*.52,s*.35,M.oak,a*s,0,0,.008);box(g,.055,.08,.016,M.brass,a*s,.01,s*.18,.01);}pipe(g,[[-s*.13,s*.26,0],[-s*.13,s*.36,0],[s*.13,s*.36,0],[s*.13,s*.26,0]],.015,M.darkwood);for(let a of [-1,1])for(let b of [-1,1])ball(g,.025,M.brass,a*s*.43,b*s*.19,s*.17,1,1,.3);label(g,'NORD',s*.24,s*.13,.1*s,.08*s,s*.17+.005,{bg:'#d2bc87',ink:'#5b4132',fontScale:.5,border:false});return g;}
 
 export function makeProps(root,M){
-  const lights=[],glows=[];
+  const lights=[],glows=[],secondHands=[];
   glows.push(lamp(root,M,-2.74,1.03,2.52,lights),lamp(root,M,2.8,.87,2.58,lights),lamp(root,M,.4,-2.5,2.35,lights));
   bench(root,M,-2.64,-.25,.28);bench(root,M,1.9,-.8,-.28);suitcase(root,M,-2.15,.19,.46,.15);suitcase(root,M,-2.04,.45,.35,-.2);suitcase(root,M,1.46,-.15,.4,.1);
   // A freestanding double-faced railway clock, its hands fixed at 18:42.
   const g=group(root,.92,GROUND,.18);cyl(g,.11,.19,.16,M.iron,0,0,0);cyl(g,.035,.065,2.39,M.engine,0,1.17,0);for(let y of [.25,1.9,2.32])cyl(g,.068,.068,.06,M.brass,0,y,0);
   pipe(g,[[0,2.2,0],[.02,2.57,0],[.25,2.68,0],[.4,2.57,0]],.033,M.iron);
   const c=group(g,.4,2.48,0);cyl(c,.36,.36,.16,M.brass).rotation.x=Math.PI/2;
-  for(let side of [-1,1]){const face=group(c,0,0,side*.09,side<0?Math.PI:0);const t=texture(512,512,(ctx,w,h)=>{ctx.fillStyle='#e6debf';ctx.fillRect(0,0,w,h);ctx.strokeStyle='#48504a';ctx.lineWidth=5;ctx.beginPath();ctx.arc(w/2,h/2,230,0,TAU);ctx.stroke();for(let k=0;k<60;k++){ctx.save();ctx.translate(w/2,h/2);ctx.rotate(k/60*TAU);ctx.lineWidth=k%5?2:5;ctx.beginPath();ctx.moveTo(0,-220);ctx.lineTo(0,k%5?-209:-196);ctx.stroke();ctx.restore();}ctx.fillStyle='#283936';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='34px Georgia';['XII','III','VI','IX'].forEach((n,i)=>{let a=i/4*TAU;ctx.fillText(n,w/2+Math.sin(a)*164,h/2-Math.cos(a)*164);});ctx.font='15px Georgia';ctx.fillText('WINTER STATION',256,325);});const mat=new THREE.MeshStandardMaterial({map:t,roughness:.6});mesh(face,new THREE.CircleGeometry(.319,64),mat,0,0,.003);for(const [len,ang,w]of[[.21,Math.PI*.4,.018],[.15,Math.PI*1.12,.027]]){const hand=box(face,w,len,.012,M.black,Math.sin(ang)*len*.4,Math.cos(ang)*len*.4,.018,.005);hand.rotation.z=-ang;}ball(face,.025,M.brass,0,0,.035,1,1,.4);}
+  for(let side of [-1,1]){const face=group(c,0,0,side*.09,side<0?Math.PI:0);const t=texture(512,512,(ctx,w,h)=>{ctx.fillStyle='#e6debf';ctx.fillRect(0,0,w,h);ctx.strokeStyle='#48504a';ctx.lineWidth=5;ctx.beginPath();ctx.arc(w/2,h/2,230,0,TAU);ctx.stroke();for(let k=0;k<60;k++){ctx.save();ctx.translate(w/2,h/2);ctx.rotate(k/60*TAU);ctx.lineWidth=k%5?2:5;ctx.beginPath();ctx.moveTo(0,-220);ctx.lineTo(0,k%5?-209:-196);ctx.stroke();ctx.restore();}ctx.fillStyle='#283936';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='34px Georgia';['XII','III','VI','IX'].forEach((n,i)=>{let a=i/4*TAU;ctx.fillText(n,w/2+Math.sin(a)*164,h/2-Math.cos(a)*164);});ctx.font='15px Georgia';ctx.fillText('WINTER STATION',256,325);});const mat=new THREE.MeshStandardMaterial({map:t,roughness:.6});mesh(face,new THREE.CircleGeometry(.319,64),mat,0,0,.003);for(const [len,ang,w]of[[.21,Math.PI*.4,.018],[.15,Math.PI*1.12,.027]]){const hand=box(face,w,len,.012,M.black,Math.sin(ang)*len*.4,Math.cos(ang)*len*.4,.018,.005);hand.rotation.z=-ang;}const sec=group(face,0,0,.031);beam(sec,[0,-.055,0],[0,.25,0],.004,M.red,undefined,5);sec.traverse(o=>{if(o.isMesh)o.userData.dynamic=true;});secondHands.push(sec);ball(face,.025,M.brass,0,0,.035,1,1,.4);}
   snowLump(c,0,.33,0,.33,.06,.14,M.snow);
   // Station signs, finials and fence along the rear platform.
-  const sign=group(root,-2.9,GROUND,.03,.3);for(let x of [-.44,.44]){cyl(sign,.025,.035,1.4,M.engine,x,.7,0);ball(sign,.045,M.brass,x,1.43,0);}box(sign,1.03,.43,.065,M.engine,0,1.14,0,.025);label(sign,'WINTER STATION\nPLATFORM 01',.96,.36,0,1.14,.036,{fontScale:.29});snowLump(sign,0,1.39,0,.53,.045,.07,M.snow);
+  const sign=group(root,-2.9,GROUND,.03,.3);for(let x of [-.44,.44]){cyl(sign,.025,.035,1.4,M.engine,x,.7,0);ball(sign,.045,M.brass,x,1.43,0);}const hangingSign=group(sign,0,1.39,0);box(hangingSign,1.03,.43,.065,M.engine,0,-.25,0,.025);label(hangingSign,'WINTER STATION\nPLATFORM 01',.96,.36,0,-.25,.036,{fontScale:.29});snowLump(hangingSign,0,0,0,.53,.045,.07,M.snow);hangingSign.traverse(o=>{if(o.isMesh)o.userData.dynamic=true;});
   for(let x=-2.6;x<2.1;x+=.24){cyl(root,.012,.014,.59,M.iron,x,GROUND+.28,-2.27,6);ball(root,.026,M.brass,x,GROUND+.59,-2.27);}for(let y of [.15,.48])beam(root,[-2.65,GROUND+y,-2.27],[2.11,GROUND+y,-2.27],.015,M.iron);
   // Semaphore: ladder, counterweight and two lit signal apertures.
   const sig=group(root,3.24,GROUND,-.28,-.3);box(sig,.25,.1,.25,M.stone,0,.02,0,.03);cyl(sig,.036,.055,2.18,M.iron,0,1.1,0);box(sig,.29,.56,.18,M.black,0,1.89,.07,.12);
@@ -199,7 +208,6 @@ export function makeProps(root,M){
   pipe(cart,[[-.3,.22,-.2],[-.3,.74,-.2],[.3,.74,-.2],[.3,.22,-.2]],.021,M.iron);box(cart,.43,.39,.36,M.oak,.02,.46,0,.015);for(let y of [.35,.57])box(cart,.45,.04,.38,M.aged,.02,y,0);label(cart,'FRAGILE',.26,.11,.02,.47,.187,{bg:'#9d8662',ink:'#332c23',fontScale:.5,border:false});snowLump(cart,0,.67,.02,.25,.04,.2,M.snow);
   // Tiny winter wreath, each evergreen sprig and berry individually placed.
   const wreath=group(root,-.82,GROUND+1.79,.278);torus(wreath,.14,.035,M.pine,0,0,0);for(let i=0;i<15;i++){let a=i/15*TAU;ball(wreath,.023,M.red,Math.sin(a)*.14,Math.cos(a)*.14,.028);}
-  return {lights,glows};
+  return {lights,glows,hangingSign,secondHands};
 }
-
 export function buildWorld(root,M,treeM=M){makeBase(root,M);makeGround(root,M);const station=makeStation(root,M);makeTrees(root,treeM);const props=makeProps(root,M);return {...props,windows:station.userData.windows,interiorLights:station.userData.interiorLights};}

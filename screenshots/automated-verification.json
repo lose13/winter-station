@@ -1,6 +1,6 @@
 {
   "result": "PASS",
-  "revision": "1.3.0",
+  "revision": "1.7.0",
   "physics": {
     "simulatedSeconds": 180,
     "shakes": 6,
@@ -28,5 +28,74 @@
     "standaloneEmbeddedAudioTracks": 3,
     "standaloneHasNoExternalJSOrCSS": true
   },
-  "executionSeconds": 3.8973309
+  "executionSeconds": 13.778496,
+  "geometry": {
+    "flightSeconds": 120,
+    "poses": 241,
+    "checkedVertices": 51401685,
+    "maxFlightRigVertexRadius": 4.78281674553811,
+    "minimumFlightRigHeight": 6.269593311216437,
+    "glassRadius": 5.24,
+    "giftSleigh": true,
+    "giftParcels": 7,
+    "windowApertures": 9,
+    "clearPaneRays": 18,
+    "blockedMullionRays": 9,
+    "interiorLamps": 2
+  },
+  "story": {
+    "cycles": 2,
+    "simulationSeconds": 144,
+    "trainTravel": 0.3381,
+    "maximumTrainStepRadians": 0.001968339843749903,
+    "santaFollowsCoach": true,
+    "headlampFollowsEngine": true,
+    "giftVertexChecks": 4654080,
+    "maximumGiftRadius": 5.016100033077191,
+    "glassRadius": 5.24,
+    "roofIntrusions": 0,
+    "receivedFrames": 320,
+    "parkedFrames": 482,
+    "snowEscapes": 0,
+    "pausePassed": true,
+    "windowGreetingPassed": true,
+    "interactionPassed": true,
+    "eventCounts": {
+      "bell": 2,
+      "bird": 7,
+      "chuff": 57,
+      "whistle": 2
+    },
+    "particles": {
+      "checkedVisiblePositions": 453047,
+      "maximumRadius": 5.069436679051718,
+      "maximumTrail": 156,
+      "maximumLanding": 58,
+      "landingBursts": 2,
+      "insideRoomAndStove": true,
+      "seekClearsTrail": true,
+      "longFramesPassed": true,
+      "textureSamplers": 0
+    }
+  },
+  "interior": {
+    "roomViews": [
+      "waiting-room",
+      "window-tea",
+      "fireside-reading"
+    ],
+    "near": 0.025,
+    "nearPlaneRays": 7290,
+    "wallOrFurnitureIntersections": 0,
+    "minimumAxisClearance": 0.15500000000000003,
+    "stationaryLookPassed": true,
+    "shakeTransforms": 3,
+    "portraitAndLandscape": true,
+    "lensRange": [
+      48,
+      76
+    ],
+    "oakFloorVisible": true,
+    "pendantShadowLights": 2
+  }
 }
